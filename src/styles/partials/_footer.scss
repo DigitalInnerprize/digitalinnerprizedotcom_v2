@@ -1,0 +1,20 @@
+$fontWeight: 500;
+
+footer {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  p {
+    font-weight: $fontWeight;
+  }
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  a {
+    margin: 0px 0px 12px;
+    font-weight: $fontWeight;
+  }
+}

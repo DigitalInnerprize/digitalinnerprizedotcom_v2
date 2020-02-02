@@ -1,0 +1,39 @@
+@import './vars';
+@import './mixins/mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  vertical-align: baseline;
+  font-size: 100%;
+  box-sizing: inherit;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: $fontFamily;
+  font-size: 17px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
