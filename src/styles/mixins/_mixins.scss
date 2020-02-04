@@ -3,6 +3,7 @@
 @import './mixins/mixins-spacing.scss';
 @import './mixins/type-utilities-and-helpers.scss';
 @import './mixins/buttons';
+@import './mixins/grid';
 
 
 @mixin max-width-container($top: 0, $bottom: null) {

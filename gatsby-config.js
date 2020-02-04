@@ -10,6 +10,8 @@ module.exports = {
     title: `Digital Innerprize`,
     description: `Specialists in App Development, Web Development, UX / UI Design, Brand & Identity, Startup Development, and more.`,
     author: `Martez H`,
+    siteUrl: 'https://digitalinnerprize.tech',
+    keywords: ['web development']
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

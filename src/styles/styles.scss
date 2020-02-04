@@ -37,3 +37,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  height: 100%;
+  @include margin__left-right-auto();
+  @include padding__left-right($left: 15px);
+
+  @include breakpoint-custom($screen-xs-max) {
+    max-width: 1170px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@import './partials/header';
+@import './pages/home';

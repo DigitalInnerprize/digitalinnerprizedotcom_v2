@@ -1,0 +1,9 @@
+.home-hero-content {
+  text-align: center;
+  @include padding__top-bottom(70px, 0px);
+
+  @include breakpoint-custom($screen-xs-max) {
+    @include padding__top-bottom(100px, 0px);
+    @include padding__left-right($left: 50px);
+  }
+}

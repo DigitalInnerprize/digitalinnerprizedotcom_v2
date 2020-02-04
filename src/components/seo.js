@@ -19,6 +19,8 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
             title
             description
             author
+            siteUrl
+            keywords
           }
         }
       }
@@ -37,39 +39,36 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
+      meta={
+      [
         {
-          name: `description`,
-          content: metaDescription,
+          name: "description",
+          content: metaDescription
         },
         {
-          property: `og:title`,
-          content: title,
+          name: "keywords",
+          content: site.siteMetadata.keywords.join(",")
         },
         {
-          property: `og:description`,
-          content: metaDescription,
+          property: "og:title",
+          content: title
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: "og:description",
+          content: metaDescription
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          name: "twitter:creator",
+          content: site.siteMetadata.author
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          name: "twitter:title",
+          content: title
         },
         {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
+          name: "twitter:description",
+          content: metaDescription
+        }
       ]
         .concat(
           metaImage

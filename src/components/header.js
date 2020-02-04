@@ -1,42 +1,41 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  const [isFixed, setFixed] = useState(false);
+  const ref = useRef(null);
+  const handleScroll = () => {
+    const fixed = ref.current && ref.current.offsetTop;
+    setFixed( window.pageYOffset > fixed);
+  };
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
 
-Header.defaultProps = {
-  siteTitle: ``,
+    return () => {
+      window.removeEventListener('scroll', () => handleScroll);
+    };
+  }, []);
+
+  return (
+    <section style={{paddingTop: isFixed && '145px'}}>
+      <div className={isFixed ? 'fixed-nav' : 'navigation'} ref={ref}>
+        <div className="container">
+        <div className="nav-container">
+          <div className="logo-container">Logo</div>
+          <div className="nav-right"><ul className="nav-list">
+            <li className="nav-item"><Link to='/'>home</Link></li>
+            <li className="nav-item"><Link to='/services'>services</Link></li>
+            <li className="nav-item"><Link to='/about'>about</Link></li>
+            <li className="nav-item">contact</li>
+          </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default Header
