@@ -40,7 +40,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 .container {
@@ -55,5 +55,56 @@ a {
   }
 }
 
+.title {
+  font-weight: bold;
+  text-transform: capitalize;
+  @include font-sizer(34px);
+}
+
+.sub-title {
+  font-weight: bold;
+  @include font-sizer(28px);
+
+  &.left {
+    text-align: left;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+}
+
+.mini-title {
+  text-transform: capitalize;
+  @include font-sizer(22px);
+}
+
+.btn {
+  text-align: center;
+  padding: 16px 0 14px;
+  border: none;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  display: inline-block;
+  line-height: 17px;
+  font-size: 1.55em;
+  height: 50px;
+  background: #0dbfef;
+  color: #ffffff;
+
+  &.large {
+    padding: 17px 32px 13px;
+  }
+}
+
+.description-content {
+  @include margin__top-bottom(20px, 25px);
+}
+
 @import './partials/header';
+@import './partials/footer';
 @import './pages/home';

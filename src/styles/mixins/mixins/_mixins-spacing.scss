@@ -80,9 +80,11 @@
 
 @mixin margin__top-bottom($top: $spacing--md, $bottom: null) {
   @if ($bottom) {
-    @include margin__top($top) @include margin__bottom($bottom);
+    @include margin__top($top);
+    @include margin__bottom($bottom);
   } @else {
-    @include margin__top($top) @include margin__bottom($top);
+    @include margin__top($top);
+    @include margin__bottom($top);
   }
 }
 

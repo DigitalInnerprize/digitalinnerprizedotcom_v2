@@ -7,3 +7,62 @@
     @include padding__left-right($left: 50px);
   }
 }
+
+.home-services {
+  text-align: center;
+  @include padding__top-bottom(120px);
+
+  .services-list {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    .services-link {
+      flex: 1;
+      @include margin__top-bottom(0px, 120px);
+      @include margin__left-right(25px);
+    }
+  }
+}
+
+.home-cta {
+  @include padding__top-bottom(0px, 100px);
+  .btn-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+.recent-projects-content {
+  display: flex;
+  @include margin__top-bottom(0px, 120px);
+
+  .left {
+    flex: 1;
+
+    .sub-title {
+      text-transform: capitalize;
+    }
+  }
+
+  .right {
+    flex: 2;
+  }
+}
+
+.home-about-content {
+  display: flex;
+  align-items: center;
+  @include margin__top-bottom(0px, 120px);
+
+  .home-about-text {
+    flex: 1;
+    order: 1;
+    .sub-title {
+      text-transform: capitalize;
+    }
+  }
+
+  .home-about-image {
+    flex: 1;
+  }
+}

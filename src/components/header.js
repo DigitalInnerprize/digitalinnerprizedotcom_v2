@@ -26,8 +26,8 @@ const Header = () => {
           <div className="logo-container">Logo</div>
           <div className="nav-right"><ul className="nav-list">
             <li className="nav-item"><Link to='/'>home</Link></li>
-            <li className="nav-item"><Link to='/services'>services</Link></li>
             <li className="nav-item"><Link to='/about'>about</Link></li>
+            <li className="nav-item"><Link to='/work'>work</Link></li>
             <li className="nav-item">contact</li>
           </ul>
           </div>
