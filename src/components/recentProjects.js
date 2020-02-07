@@ -11,7 +11,30 @@ const RecentProjects = () => {
             <p className='description-content'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae voluptate totam, fugit illo eos ratione suscipit aperiam eligendi expedita, illum quia. Odit dolorem sequi rerum p</p>
             <Link to='/work' className='btn large'>see our work</Link>
           </div>
-          <div className="right">3 image grid</div>
+          <div className="right">
+            <div className="column-left projects-column">
+              <div className="box">
+              <img 
+              src='/web-development.png' 
+              alt='developer coding' 
+            />
+              </div>
+              <div className="box">
+              <img 
+              src='/web-development.png' 
+              alt='developer coding' 
+            />
+              </div>
+            </div>
+            <div className="column-right project-column">
+              <div className="box">
+              <img 
+              src='/web-development.png' 
+              alt='developer coding' 
+            />
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </section>
