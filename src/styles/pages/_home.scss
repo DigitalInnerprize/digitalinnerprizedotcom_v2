@@ -24,12 +24,16 @@
   .services-list {
     text-transform: capitalize;
     display: flex;
-    justify-content: center;
     align-items: center;
     .service-link {
       flex: 1;
       @include margin__top-bottom(0px, 120px);
       @include margin__left-right(25px);
+
+      .service-title {
+        @include font-sizer(18px);
+        @include margin__top-bottom(20px, 0px);
+      }
     }
   }
 }
@@ -90,7 +94,7 @@
   }
 
   .home-about-image {
-    flex: 1;
+    flex: 2;
   }
 }
 

@@ -16,6 +16,7 @@
 }
 
 img {
+  height: 100%;
   width: 100%;
 }
 
@@ -36,11 +37,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  color: $primaryFontColor;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+p {
+  opacity: 0.7;
 }
 
 .container {
@@ -83,26 +89,29 @@ a {
   @include font-sizer(22px);
 }
 
-.btn {
-  text-align: center;
-  padding: 16px 0 14px;
-  border: none;
-  letter-spacing: 0.5px;
-  border-radius: 50px;
-  display: inline-block;
-  line-height: 17px;
-  font-size: 1.55em;
-  height: 50px;
-  background: #0dbfef;
-  color: #ffffff;
+/* shared page classes */
+.description-content {
+  @include margin__top-bottom(20px, 25px);
+}
 
-  &.large {
-    padding: 17px 32px 13px;
+.flex-container {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+
+  &.align-center {
+    align-self: center;
   }
 }
 
-.description-content {
-  @include margin__top-bottom(20px, 25px);
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
 }
 
 @import './partials/header';

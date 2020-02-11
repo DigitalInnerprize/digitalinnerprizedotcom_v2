@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="socials">
           <h3 className='mini-title'>follow us</h3>
           <ul className="social-links">
-            <li >
+            <li>
               <a href="#" className="social-link">facebook</a>
             </li>
             <li>

@@ -1,6 +1,6 @@
 .footer {
-  background: #2e2e2e;
-  color: white;
+  background: $bgColor;
+  color: $secondaryFontColor;
   @include padding__top-bottom(100px, 0px);
 
   .footer-top {
@@ -34,6 +34,11 @@
 .social-links,
 .footer-links {
   list-style: none;
+}
+
+.social-link,
+.footer-link {
+  opacity: 0.7;
 }
 
 .footer-email,
