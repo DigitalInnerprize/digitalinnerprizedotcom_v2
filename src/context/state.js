@@ -1,6 +1,5 @@
 import React from 'react'
-import { FilterProvider } from './filter';
-
+import { FilterProvider } from './filter'
 
 function ProviderComposer({ contexts, children }) {
   return contexts.reduceRight(
@@ -9,17 +8,15 @@ function ProviderComposer({ contexts, children }) {
         children: kids,
       }),
     children
-  );
+  )
 }
 
 function ContextProvider({ children }) {
   return (
-    <ProviderComposer
-      contexts={[<FilterProvider />]}
-    >
+    <ProviderComposer contexts={[<FilterProvider />]}>
       {children}
     </ProviderComposer>
-  );
+  )
 }
 
-export { ContextProvider };
+export { ContextProvider }

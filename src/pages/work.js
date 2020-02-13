@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 import WorkHero from '../components/work/workHero'
 
 const WorkPage = () => (
@@ -11,4 +11,4 @@ const WorkPage = () => (
   </Layout>
 )
 
-export default WorkPage;
+export default WorkPage

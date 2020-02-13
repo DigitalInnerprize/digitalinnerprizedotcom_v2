@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 import HomeHero from '../components/home/homeHero'
 import HomeServices from '../components/home/homeServices'
 import RecentProjects from '../components/home/recentProjects'

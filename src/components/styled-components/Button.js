@@ -11,11 +11,13 @@ export const Button = styled.button`
   letter-spacing: 0.5px;
   border-radius: 50px;
   line-height: 17px;
-  color: #F8F8Fb;
-  background: #3434FF;
+  color: #f8f8fb;
+  background: #3434ff;
   cursor: pointer;
 
   &:hover {
-    background: ${Color('#3434FF').lighten(0.1).toString()}
+    background: ${Color('#3434FF')
+      .lighten(0.1)
+      .toString()};
   }
-`;
+`

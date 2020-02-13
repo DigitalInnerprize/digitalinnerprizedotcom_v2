@@ -1,9 +1,9 @@
 let activeEnv =
-  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 console.log(`Using environment config: '${activeEnv}'`)
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${activeEnv}`,
-});
+})
 
 module.exports = {
   siteMetadata: {
@@ -11,7 +11,7 @@ module.exports = {
     description: `Specialists in App Development, Web Development, UX / UI Design, Brand & Identity, Startup Development, and more.`,
     author: `Martez H`,
     siteUrl: 'https://digitalinnerprize.tech',
-    keywords: ['web development']
+    keywords: ['web development'],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -48,9 +48,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          process.env.GA_ID
-        ],
+        trackingIds: [process.env.GA_ID],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
         gtagConfig: {
