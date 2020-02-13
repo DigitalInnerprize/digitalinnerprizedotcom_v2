@@ -13,22 +13,27 @@ import Launch from '../../images/svg/launch.svg'
 const svgArray = [
   {
     title: 'app development',
+    paragraph: `We design & develop mobile apps for iPhone, iPad, and Android devices. Our apps have been downloaded over 500,000+ times!`,
     svg: Mobile
   },
   {
     title: 'web development',
+    paragraph: `We build responsive websites and web applications, from simple sites to online stores and social networks - our team has done it all.`,
     svg: Desktop
   },
   {
     title: 'ui / ux design',
+    paragraph: `We provide UX & UI design for all our projects, or as a standalone service. This includes wireframes, mockups, prototypes, and more.`,
     svg: Design
   },
   {
     title: 'working with startups',
+    paragraph: `We love working with startups, working closely with them to turn ideas into reality, whether its a new app or a web platform or both.`,
     svg: Launch
   },
   {
     title: 'brand identity design',
+    paragraph: `We design custom logos and brand identity for companies just starting out or in need of a refresh. From style-guides to stationery.`,
     svg: Chart
   }
 ];
@@ -43,7 +48,7 @@ const HomeServices = () => {
   });
 
   return (
-    <section className="about-page">
+    <section className="about-page-services">
     <div className="container">
       <Waypoint
         onEnter={() => {
@@ -54,14 +59,21 @@ const HomeServices = () => {
         <h2 className='sub-title'>What we do</h2>
         <div className="services-list">
         {trail.map((animation, index) => {
-          const { title, svg } = svgArray[index];
+          const { title, svg, paragraph } = svgArray[index];
           return (
             <a.div style={animation}>
-              <Link to="/work" className='service-link'>
+              <Link to="/work">
+              <div className="service-link">
                 <Svg
                   svg={svg}
                 />
-                <h3 className='service-title'>{title}</h3>
+                <div className="service-link-content">
+                  <h3 className='service-title'>{title}</h3>
+                  <p className="service-description">
+                    {paragraph}
+                  </p>
+                </div>
+                </div>
               </Link>
             </a.div>
           )
