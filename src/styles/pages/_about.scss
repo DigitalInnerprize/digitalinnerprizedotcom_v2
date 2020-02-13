@@ -1,0 +1,12 @@
+.about-page {
+  @include margin__top-bottom(0, 120px);
+  .about-services {
+    text-align: center;
+
+    .services-list {
+      display: grid;
+      grid-gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

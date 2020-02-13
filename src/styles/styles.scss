@@ -96,6 +96,7 @@ p {
 
 .flex-container {
   display: flex;
+  @include padding__left-right(50px);
 }
 
 .flex-1 {
@@ -117,3 +118,4 @@ p {
 @import './partials/header';
 @import './partials/footer';
 @import './pages/home';
+@import './pages/about';
