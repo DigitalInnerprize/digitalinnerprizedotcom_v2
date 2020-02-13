@@ -13,6 +13,7 @@ const AboutHero = () => {
     config: config.molasses
   });
   return (
+    <div className="about-page-heading">
     <div className='container'>
       <div className="flex-container">
       <div className="flex-1 align-center">
@@ -31,6 +32,7 @@ const AboutHero = () => {
           <AnimatedImage animatedJson={animatedJson} altText="about page image" height={550} width={550} />
         </div>
       </div>
+    </div>
     </div>
   )
 }

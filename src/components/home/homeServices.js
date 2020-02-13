@@ -46,7 +46,7 @@ const HomeServices = () => {
         {trail.map((animation, index) => {
           const { title, svg } = svgArray[index];
           return (
-            <a.div style={animation}>
+            <a.div key={title} style={animation}>
               <Link to="/work" className='service-link'>
                 <Svg
                   svg={svg}
