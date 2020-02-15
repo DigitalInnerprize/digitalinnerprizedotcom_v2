@@ -15,7 +15,7 @@ const AboutHero = () => {
   return (
     <div className="about-page-heading">
       <div className="container">
-        <div className="flex-container">
+        <div className="flex-container about-page">
           <div className="flex-1 align-center">
             <Waypoint
               onEnter={() => {
@@ -40,7 +40,7 @@ const AboutHero = () => {
               animatedJson={animatedJson}
               altText="about page image"
               height={550}
-              width={550}
+              width={500}
             />
           </div>
         </div>

@@ -96,7 +96,11 @@ p {
 
 .flex-container {
   display: flex;
-  @include padding__left-right(50px);
+  
+  &.about-page,
+  &.work-page {
+    @include padding__left-right(50px, 0px);
+  }
 }
 
 .flex-1 {

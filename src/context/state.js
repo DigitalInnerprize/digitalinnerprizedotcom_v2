@@ -1,5 +1,5 @@
 import React from 'react'
-import { FilterProvider } from './filter'
+import { ModalProvider } from './modal'
 
 function ProviderComposer({ contexts, children }) {
   return contexts.reduceRight(
@@ -13,7 +13,7 @@ function ProviderComposer({ contexts, children }) {
 
 function ContextProvider({ children }) {
   return (
-    <ProviderComposer contexts={[<FilterProvider />]}>
+    <ProviderComposer contexts={[<ModalProvider />]}>
       {children}
     </ProviderComposer>
   )

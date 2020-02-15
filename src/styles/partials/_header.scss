@@ -16,6 +16,7 @@
 
   .nav-item {
     float: left;
+    cursor: pointer;
     @include margin__left-right(15px);
     @include padding__left-right(29px, 6px);
   }

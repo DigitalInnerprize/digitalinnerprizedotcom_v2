@@ -1,8 +1,10 @@
 import { Link } from 'gatsby'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useContext } from 'react'
+import { ModalContext } from '../context'
 
 const Header = () => {
   const [isFixed, setFixed] = useState(false)
+  const { openModal } = useContext(ModalContext)
   const ref = useRef(null)
   const handleScroll = () => {
     const fixed = ref.current && ref.current.offsetTop
@@ -34,7 +36,9 @@ const Header = () => {
                 <li className="nav-item">
                   <Link to="/work">work</Link>
                 </li>
-                <li className="nav-item">contact</li>
+                <li className="nav-item" onClick={openModal}>
+                  contact
+                </li>
               </ul>
             </div>
           </div>
