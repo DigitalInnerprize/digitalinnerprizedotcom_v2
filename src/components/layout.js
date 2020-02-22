@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 import Header from './header'
 import Footer from './footer'
-import Portal from './Portal'
+import Portal from './portal'
 import { ModalContext } from '../context'
-import { Modal } from '../components/styled-components/Modal'
+import { Modal } from '../components/styled-components/modal'
 import '../styles/styles.scss'
 
 const Layout = ({ children }) => {

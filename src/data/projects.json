@@ -1,0 +1,39 @@
+[
+    {
+      "id":1, 
+      "name":"Ubisoft",
+      "imagePath": "ubisoft.png",
+      "url":"https://www.ubisoft.com/en-us/",
+      "description": "Provided development services to Ubisoft and helped build their homescreen and current game catalogue search. With the largest in-house game development staff in the world, Ubisoft gathers more than 14,000 team members in more than 40 studios around the world. Ubisoft attracts the best and brightest from all continents with talent, creativity & innovation at its core."
+    },
+    {
+      "id":2,
+      "name":"Makena",
+      "imagePath": "makena.png",
+      "url":"https://investments.makenacap.com",
+      "description": "Provided development services to Makena in building their client portal. Makena Capital Management, LLC ('Makena'​) is an investment firm that manages multi‐asset class and single‐asset class portfolios on behalf of our clients with the goal of long‐term capital preservation and appreciation."
+    },
+    {
+      "id":3,
+      "name":"Endpoint Closing",
+      "imagePath": "endpointclosing.png",
+      "url":"https://endpointclosing.com/",
+      "appLink": "https://apps.apple.com/us/app/endpoint/id138845874",
+      "description": "H",
+      "mobile": true
+    },
+    {
+      "id":4,
+      "name":"Digital InnerPrize v1",
+      "imagePath": "digital_innerprize.png",
+      "url":"https://digitalinnerprize.tech/",
+      "description": "H"
+    },
+    {
+      "id":5,
+      "name":"Wintell",
+      "imagePath": "winstonretail.png",
+      "url":"http://client-stage.wrs.presencepg.com/login",
+      "description": "Provided development services to Winston Retail to migrate an outdated legacy .NET system to NodeJS in AWS. The product leveraged Docker, Redis, CloudFront and several cutting edge tools and services."
+    }
+]

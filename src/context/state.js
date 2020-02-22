@@ -1,5 +1,6 @@
 import React from 'react'
 import { ModalProvider } from './modal'
+import { ProjectsProvider } from './projects'
 
 function ProviderComposer({ contexts, children }) {
   return contexts.reduceRight(
@@ -13,7 +14,7 @@ function ProviderComposer({ contexts, children }) {
 
 function ContextProvider({ children }) {
   return (
-    <ProviderComposer contexts={[<ModalProvider />]}>
+    <ProviderComposer contexts={[<ModalProvider />, <ProjectsProvider />]}>
       {children}
     </ProviderComposer>
   )

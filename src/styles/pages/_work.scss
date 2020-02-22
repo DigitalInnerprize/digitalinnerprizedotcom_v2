@@ -1,0 +1,24 @@
+.project-container {
+  width: 90%;
+  margin: 0px auto 150px;
+
+  @include breakpoint-custom(60em) {
+    max-width: 95%;
+  }
+}
+
+.project-grid {
+  display: grid;
+  gap: 20px;
+  margin: 0px auto;
+  grid-template-columns: repeat(1, 1fr);
+
+
+  @include breakpoint-custom($screen-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint-custom($screen-md-max) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

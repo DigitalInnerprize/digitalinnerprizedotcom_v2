@@ -119,7 +119,13 @@ p {
   flex: 3;
 }
 
+.about-page-heading,
+.work-page-heading {
+  @include padding__top-bottom(90px);
+}
+
 @import './partials/header';
 @import './partials/footer';
 @import './pages/home';
 @import './pages/about';
+@import './pages/work';
