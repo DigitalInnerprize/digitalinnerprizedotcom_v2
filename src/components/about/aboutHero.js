@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Waypoint } from 'react-waypoint'
 import { useSpring, animated as a, config } from 'react-spring'
-import { Button } from '../styled-components/button'
+import { Button } from '../styled/button'
 import AnimatedImage from '../animateImage'
 import animatedJson from '../../images/animated/techno-male-animated.json'
 

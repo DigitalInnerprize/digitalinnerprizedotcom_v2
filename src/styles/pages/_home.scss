@@ -19,15 +19,20 @@
 
 .home-services {
   text-align: center;
-  @include padding__top-bottom(120px);
+  @include padding__top-bottom(100px);
 
   .services-list {
     text-transform: capitalize;
     display: flex;
     align-items: center;
+    flex-direction: column;
+
+    @include breakpoint-custom($screen-xs-max) {
+      flex-direction: row;
+    }
     .service-link {
       flex: 1;
-      @include margin__top-bottom(0px, 120px);
+      @include margin__top-bottom(0px, 100px);
       @include margin__left-right(25px);
 
       .service-title {
@@ -48,11 +53,22 @@
 
 .recent-projects-content {
   display: flex;
-  @include margin__top-bottom(0px, 120px);
+  flex-direction: column;
+  @include margin__top-bottom(0px, 60px);
+
+  @include breakpoint-custom($screen-xs-max) {
+    flex-direction: row;
+    @include margin__top-bottom(0px, 100px);
+  }
 
   .left {
     flex: 1;
     align-self: center;
+    text-align: center;
+
+    @include breakpoint-custom($screen-xs-max) {
+      text-align: left;
+    }
 
     .sub-title {
       text-transform: capitalize;
@@ -62,15 +78,26 @@
   .right {
     flex: 2;
     display: flex;
+    flex-direction: column;
     @include padding__left-right(8px);
 
+    @include breakpoint-custom($screen-xs-max) {
+      flex-direction: row;
+    }
+
     .project-column {
-      @include padding__left-right(12px);
+      padding: 0;
+
+      @include breakpoint-custom($screen-xs-max) {
+        @include padding__left-right(12px);
+      }
     }
 
     .column-left {
-      .box:first-of-type {
-        @include margin__top-bottom(0px, 65px);
+      @include breakpoint-custom($screen-xs-max) {
+        .box:first-of-type {
+          @include margin__top-bottom(0px, 65px);
+        }
       }
     }
 
@@ -83,11 +110,21 @@
 .home-about-content {
   display: flex;
   align-items: center;
-  @include margin__top-bottom(0px, 120px);
+  flex-direction: column;
+  text-align: center;
+  @include margin__top-bottom(0px, 100px);
+
+  @include breakpoint-custom($screen-xs-max) {
+    flex-direction: row;
+  }
 
   .home-about-text {
     flex: 1;
-    order: 1;
+
+    @include breakpoint-custom($screen-xs-max) {
+      order: 1;
+    }
+
     .sub-title {
       text-transform: capitalize;
     }
@@ -100,4 +137,9 @@
 
 .box {
   background-color: red;
+  @include margin__top-bottom(15px);
+
+  @include breakpoint-custom($screen-xs-max) {
+    margin: 0;
+  }
 }

@@ -13,7 +13,6 @@ const AnimatedImage = ({ animatedJson, height, width }) => (
       },
     }}
     height={height}
-    width={width}
   />
 )
 

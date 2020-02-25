@@ -20,11 +20,6 @@ img {
   width: 100%;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-}
-
 html {
   box-sizing: border-box;
   font-family: $fontFamily;
@@ -96,10 +91,21 @@ p {
 
 .flex-container {
   display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include breakpoint-custom($screen-xs-max) {
+    flex-direction: row;
+    text-align: left;
+  }
   
   &.about-page,
   &.work-page {
-    @include padding__left-right(50px, 0px);
+    @include padding__left-right(30px);
+
+    @include breakpoint-custom($screen-xs-max) {
+      @include padding__left-right(50px, 0px);
+    }
   }
 }
 
@@ -117,6 +123,14 @@ p {
 
 .flex-3 {
   flex: 3;
+}
+
+.error-text {
+  margin: 0.25em 0 0.25em 0;
+  padding: 0;
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .about-page-heading,

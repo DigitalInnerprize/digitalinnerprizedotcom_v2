@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSpring, animated as a } from 'react-spring'
 import { Link } from 'gatsby'
-import { Button } from '../styled-components/button'
+import { Button } from '../styled/button'
 import animatedJson from '../../images/animated/online-buy-products-animated.json'
 import AnimatedImage from '../animateImage'
 
