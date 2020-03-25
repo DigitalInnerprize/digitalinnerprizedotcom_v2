@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Martez Conner",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
     "classnames": "^2.2.6",
     "color": "^3.1.2",
     "dotenv": "^8.2.0",
@@ -19,6 +20,7 @@
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-plugin-styled-components": "^3.2.1",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.13",
     "node-sass": "^4.13.1",
