@@ -1,4 +1,5 @@
 import React from 'react'
+import { withTheme } from 'styled-components'
 import { FlexRow} from './styled/containers'
 import { FormContainer, Input } from './styled/form'
 import { Button } from './styled/button'
@@ -79,4 +80,4 @@ const ContactForm = () => {
   )
 }
 
-export default ContactForm
+export default withTheme(ContactForm)
