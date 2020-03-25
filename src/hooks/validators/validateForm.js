@@ -3,14 +3,14 @@ export function validateForm(values) {
 
   // Name Errors
   if (!values.name) {
-    errors.push({name:"Required Name"});
+    errors.push({name: "Required Name"});
   }
 
   // Password Errors
   if (!values.phone) {
-    errors.push({phone:"Required Phone Number"});
+    errors.push({phone: "Required Phone Number"});
   } else if (values.phone.length !== 10) {
-    errors.push({phone :"Phone must be 10 characters including area code"});
+    errors.push({phone: "Phone must be 10 characters including area code"});
   }
 
   // Email Errors

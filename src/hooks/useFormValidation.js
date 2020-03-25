@@ -12,7 +12,7 @@ const errorState = {
 
 function useFormValidation(initialState, validate) {
   const [values, setValues] = React.useState(initialState);
-  const [errors, setErrors] = React.useState({ errors: [] });
+  const [errors, setErrors] = React.useState(errorState);
   const [isSubmitting, setSubmitting] = React.useState(false);
 
   React.useEffect(() => {

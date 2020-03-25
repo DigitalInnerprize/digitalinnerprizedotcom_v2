@@ -1,71 +1,75 @@
 import React from 'react'
 import { FlexRow} from './styled/containers'
-import { FormContainer, Input, TextArea } from './styled/form'
+import { FormContainer, Input } from './styled/form'
 import { Button } from './styled/button'
-import useFormValidation from '../hooks/useFormValidation';
-import { validateForm } from "../hooks/validators/validateForm";
+import { useForm } from "react-hook-form";
+import * as yup from 'yup'
 
-const INITIAL_STATE = {
-  name: "",
-  phone: "",
-  email: "",
-  company: "",
-  comment: ``
-};
+const schema = yup.object().shape({
+  name: yup.string().required(),
+  company: yup.string().required(),
+  email: yup.string().email(),
+  phone: yup
+  .number()
+  .required()
+  .positive()
+})
+
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
 
 const ContactForm = () => {
-  const {
-    handleSubmit,
-    handleChange,
-    handleBlur,
-    values,
-    errors,
-    isSubmitting,
-  } = useFormValidation(INITIAL_STATE, validateForm);
-  const [ errorArr ] = errors
+  const { register, handleSubmit, errors, formState: { isSubmitting } } = useForm({
+    validationSchema: schema
+  });
+
+  const onSubmit = (data, e) => {
+    if (Object.keys(errors).length === 0) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...data })
+      })
+      .then(() => alert('Your email has been sent someone will reach out to you shortly!'))
+      .catch(error => console.log(error));
+    }
+    e.preventDefault();
+    e.target.reset();
+  }
+
   return (
       <FormContainer>
-      {errorArr && errorArr.map(error => <p className="error-text">{Object.values(error)}</p>)}
-        <form onSubmit={handleSubmit}>
+      {errors.name && <p className='error-text'>{errors.name.message}</p>}
+      {errors.company && <p className='error-text'>{errors.company.message}</p>}
+      {errors.email && <p className='error-text'>{errors.email.message}</p>}
+      {errors.phone && <p className='error-text'>{errors.phone.message}</p>}
+        <form onSubmit={handleSubmit(onSubmit)}>
           <FlexRow marginAuto paddingTop='md'>
               <Input
               name='name'
               placeholder='Name'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.name}
+              ref={register}
               />
               <Input
               name='company'
               placeholder='Company Name'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.company}
+              ref={register}
               />
               <Input
                 name='email'
                 type='email'
                 placeholder='Email'
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.email}
+                ref={register}
                 />
               <Input
                 name='phone'
                 type='number'
                 placeholder='Contact Number'
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.phone}
+                ref={register}
                 />
-            <TextArea 
-            name='comment' 
-            rows='5' 
-            placeholder='Briefly explain your project' 
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.comment}
-            />
             <Button 
               disabled={isSubmitting}
               type='submit'>Send Message</Button>

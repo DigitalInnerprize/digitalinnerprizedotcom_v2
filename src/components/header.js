@@ -24,6 +24,7 @@ const Header = () => {
           <div className="nav-container">
             <div className="logo-container">Logo</div>
             <div className="nav-right">
+              
               <ul className="nav-list">
                 <li className="nav-item">
                   <Link to="/">home</Link>
