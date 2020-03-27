@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-portal`,
       options: {
@@ -61,9 +62,6 @@ module.exports = {
           head: false,
         },
       },
-    },
-    {
-      resolve: `gatsby-plugin-styled-components`,
     },
 
     // To learn more, visit: https://gatsby.dev/offline
