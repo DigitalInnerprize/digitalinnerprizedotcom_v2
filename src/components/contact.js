@@ -1,6 +1,6 @@
 import React from 'react'
 import { withTheme } from 'styled-components'
-import { FlexRow} from './styled/containers'
+import { FlexRow } from './styled/containers'
 import { FormContainer, Input } from './styled/form'
 import { Button } from './styled/button'
 import { useForm } from "react-hook-form";
@@ -48,7 +48,10 @@ const ContactForm = () => {
       {errors.email && <p className='error-text'>{errors.email.message}</p>}
       {errors.phone && <p className='error-text'>{errors.phone.message}</p>}
         <form onSubmit={handleSubmit(onSubmit)}>
-          <FlexRow marginAuto paddingTop='md'>
+          <FlexRow
+            column
+            marginAuto
+            paddingTop='md'>
               <Input
               name='name'
               placeholder='Name'

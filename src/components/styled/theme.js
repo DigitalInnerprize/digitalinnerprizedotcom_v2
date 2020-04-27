@@ -32,20 +32,6 @@ const theme = {
       blueGradient1: '#1e2e84',
       blueGradient2: '#000837',
     },
-    viz: {
-      financial: '#45bce5',
-      financialFade: '#c2e1f0',
-      health: '#42bc45',
-      healthFade: '#baf5bb',
-      other: '#bdccd4',
-      otherFade: '#d3e4ed',
-      productivity: '#ff9e16',
-      productivityFade: '#ffe5c2',
-      shopping: '#95d600',
-      shoppingFade: '#d4e8b5',
-      social: '#f2d940',
-      socialFade: '#e8e2ae',
-    },
   },
   hardCodedSizes: {
     buttonHeight: 38,
@@ -66,6 +52,7 @@ const theme = {
     },
     horizontal: {
       0: 0,
+      auto: '0 auto',
       xs: '.3em',
       sm: '.6em',
       md: '1.2em',

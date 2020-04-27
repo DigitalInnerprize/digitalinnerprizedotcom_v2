@@ -6,13 +6,9 @@
   .footer-top {
     display: flex;
     justify-content: space-evenly;
-    @include margin__top-bottom(0px, 50px);
+    @include padding__top-bottom(0px, 50px);
   }
 
-  .footer-bottom {
-    border-top: 1px solid #525252;
-    @include padding__top-bottom(30px);
-  }
 }
 
 .footer-bottom-content {

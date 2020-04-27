@@ -2,7 +2,24 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
+  @include breakpoint-custom($screen-xs-max) {
+    justify-content: space-between;
+  }
+}
+
+.logo-container {
+  flex: 1;
+  @include breakpoint-custom($screen-xs-max) {
+    flex: initial;
+  }
+}
+
+.nav-right {
+  flex: 1;
+  @include breakpoint-custom($screen-xs-max) {
+    flex: initial;
+  }
 }
 
 .navigation {
@@ -11,14 +28,19 @@
 }
 
 .nav-list {
-  list-style: none;
-  text-transform: capitalize;
+  display: none;
 
-  .nav-item {
-    float: left;
-    cursor: pointer;
-    @include margin__left-right(15px);
-    @include padding__left-right(29px, 6px);
+  @include breakpoint-custom($screen-sm) {
+    display: initial;
+    list-style: none;
+    text-transform: capitalize;
+
+    .nav-item {
+      float: left;
+      cursor: pointer;
+      @include margin__left-right(15px);
+      @include padding__left-right(29px, 6px);
+    }
   }
 }
 

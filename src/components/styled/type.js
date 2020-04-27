@@ -1,4 +1,7 @@
+import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
+import { fontSizer } from './mixins';
 
 // headings
 export const Heading = styled.h1`
@@ -68,6 +71,7 @@ export const H3 = props => (
     {...props}
     as="h3"
     children={props.children}
+    marginBottom="sm"
     color="gray4"
     size="h3"
   />
@@ -103,3 +107,93 @@ export const H6 = props => (
     uppercase
   />
 );
+
+// body
+export const P = styled.p`
+  max-width: ${props => props.maxWidth && props.maxWidth};
+  margin-top: ${props =>
+    typeof props.marginTop !== 'undefined' &&
+    props.theme.spacing.vertical[props.marginTop]};
+  margin-bottom: ${props =>
+    typeof props.marginBottom !== 'undefined'
+      ? props.theme.spacing.vertical[props.marginBottom]
+      : props.theme.spacing.vertical.lg};
+  margin-left: ${props => props.centered && 'auto'};
+  margin-right: ${props => props.centered && 'auto'};
+  ${props =>
+    fontSizer(
+      props.size
+        ? props.theme.type.size[props.size]
+        : props.theme.type.size.body,
+      props.theme.type.multipliers.body,
+      props.theme.breakpoints
+    )};
+  color: ${props => props.color && props.theme.colors[props.color]};
+  font-weight: ${props => props.bold && 'bold'};
+  text-align: ${props => props.centered && 'center'};
+  cursor: default;
+`;
+export const SmallText = styled.span`
+  max-width: 80%;
+  margin: 0 0 ${props => props.theme.spacing.vertical.md};
+  color: ${props => props.color && props.theme.colors[props.color]};
+  letter-spacing: ${props => props.theme.type.letterSpacing.regular};
+  font-family: ${props => props.theme.type.family.heading};
+  line-height: ${props => props.theme.type.lineHeight.extended};
+  text-transform: uppercase;
+  font-weight: ${props => props.fontWeight && props.fontWeight};
+  font-size: ${props => props.theme.type.size.sm}px;
+  ${props =>
+    fontSizer(
+      props.theme.type.size.xs,
+      props.theme.type.multipliers.body,
+      props.theme.breakpoints
+    )};
+`;
+export const Em = styled.span`
+  font-style: italic;
+`;
+
+// links
+export const NavLink = styled(Link)`
+  margin-top: ${props =>
+    typeof props.marginTop !== 'undefined' &&
+    props.theme.spacing.vertical[props.marginTop]};
+  margin-bottom: ${props =>
+    typeof props.marginBottom !== 'undefined'
+      ? props.theme.spacing.vertical[props.marginBottom]
+      : props.noMargin ? 0 : props.theme.spacing.vertical.lg};
+  display: ${props => props.display ? props.display : 'block'};
+  font-family: ${props => props.theme.type.family.heading};
+  text-transform: ${props => props.textTranform ? props.textTransform : 'initial'};
+  ${props =>
+    fontSizer(
+      props.size
+        ? props.theme.type.size[props.size]
+        : props.theme.type.size.body,
+      props.theme.type.multipliers.body,
+      props.theme.breakpoints
+    )};
+`;
+
+export const NavClickLink = styled.a`
+  margin-top: ${props =>
+    typeof props.marginTop !== 'undefined' &&
+    props.theme.spacing.vertical[props.marginTop]};
+  margin-bottom: ${props =>
+    typeof props.marginBottom !== 'undefined'
+      ? props.theme.spacing.vertical[props.marginBottom]
+      : props.theme.spacing.vertical.lg};
+  display: ${props => props.display ? props.display : 'block'};
+  font-family: ${props => props.theme.type.family.heading};
+  text-transform: ${props => props.textTransform ? props.textTransform : 'initial'};
+  cursor: pointer;
+  ${props =>
+    fontSizer(
+      props.size
+        ? props.theme.type.size[props.size]
+        : props.theme.type.size.body,
+      props.theme.type.multipliers.body,
+      props.theme.breakpoints
+    )};
+`;

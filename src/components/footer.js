@@ -1,76 +1,63 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import styled from 'styled-components'
+import { Container } from './styled/containers'
+import { UL, LI } from './styled/list'
+import { H3, P, NavClickLink } from './styled/type'
 
 const propTypes = {
   page: PropTypes.string,
 }
 
+const Wrapper = styled.footer`
+  padding-top: 100px;
+  background: #3434FF;
+  color: #F8F8Fb;
+  border-top: 2px solid #1f364d;
+`;
+
+const Content = styled.div`
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: space-evenly;
+`;
+
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-wrapper">
-        <div className="container">
-          <div className="footer-top">
+    <Wrapper>
+        <Container marginLeft='auto'>
+          <Content>
             <div className="contact-info">
-              <h3 className="mini-title">contact</h3>
-              <p className="footer-email">digitalinnerprize@gmail.com</p>
+              <H3 uppercase>contact</H3>
+              <P>digitalinnerprize@gmail.com</P>
+              <div className="copyright">
+                <P>
+                  2019&copy; Digital Innerprize Llc
+                </P>
+              </div>
             </div>
             <div className="socials">
-              <h3 className="mini-title">follow us</h3>
-              <ul className="social-links">
-                <li>
-                  <a href="#" className="social-link">
+              <H3 uppercase>
+                follow us
+              </H3>
+              <UL
+                column
+                className="social-links">
+                <LI>
+                  <NavClickLink textTransform='Capitalize' href="#">
                     facebook
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="social-link">
+                  </NavClickLink>
+                </LI>
+                <LI>
+                  <NavClickLink textTransform='Capitalize' href="#">
                     instagram
-                  </a>
-                </li>
-              </ul>
+                  </NavClickLink>
+                </LI>
+              </UL>
             </div>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <div className="container">
-            <div className="footer-bottom-content">
-              <div className="copyright">
-                <p>2019&copy; Digital Innerprize Llc</p>
-              </div>
-              <ul className="footer-links">
-                <li>
-                  <Link to="/" className="footer-link">
-                    home
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="footer-link">
-                    about
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/work" className="footer-link">
-                    work
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="footer-link">
-                    privacy
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="footer-link">
-                    contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+          </Content>
+        </Container>
+    </Wrapper>
   )
 }
 

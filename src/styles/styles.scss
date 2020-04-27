@@ -44,6 +44,14 @@ p {
   opacity: 0.7;
 }
 
+.mobile-nav {
+  display: block;
+
+  @include breakpoint-custom($screen-xs-max) {
+    display: none;
+  }
+}
+
 .container {
   height: 100%;
   @include margin__left-right-auto();
