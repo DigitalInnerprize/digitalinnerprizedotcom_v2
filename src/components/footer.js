@@ -10,10 +10,14 @@ const propTypes = {
 }
 
 const Wrapper = styled.footer`
-  padding-top: 100px;
+  padding-top: 60px;
   background: #3434FF;
   color: #F8F8Fb;
   border-top: 2px solid #1f364d;
+
+  @media (min-width: 767px) {
+    padding-top: 100px
+  }
 `;
 
 const Content = styled.div`
@@ -23,16 +27,20 @@ const Content = styled.div`
 `;
 
 const Footer = () => {
+
+  const d = new Date();
+  const year = d.getFullYear();
+
   return (
     <Wrapper>
         <Container marginLeft='auto'>
           <Content>
             <div className="contact-info">
               <H3 uppercase>contact</H3>
-              <P>digitalinnerprize@gmail.com</P>
+              <P>Digitalinnerprize@gmail.com</P>
               <div className="copyright">
                 <P>
-                  2019&copy; Digital Innerprize Llc
+                  {year}&copy; Digital Innerprize Llc
                 </P>
               </div>
             </div>

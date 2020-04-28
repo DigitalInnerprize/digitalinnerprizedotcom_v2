@@ -130,6 +130,7 @@ export const P = styled.p`
     )};
   color: ${props => props.color && props.theme.colors[props.color]};
   font-weight: ${props => props.bold && 'bold'};
+  text-transform: ${props => props.textTransform && props.textTransform};
   text-align: ${props => props.centered && 'center'};
   cursor: default;
 `;
@@ -165,7 +166,7 @@ export const NavLink = styled(Link)`
       : props.noMargin ? 0 : props.theme.spacing.vertical.lg};
   display: ${props => props.display ? props.display : 'block'};
   font-family: ${props => props.theme.type.family.heading};
-  text-transform: ${props => props.textTranform ? props.textTransform : 'initial'};
+  text-transform: ${props => props.textTransform && props.textTransform};
   ${props =>
     fontSizer(
       props.size
@@ -186,7 +187,7 @@ export const NavClickLink = styled.a`
       : props.theme.spacing.vertical.lg};
   display: ${props => props.display ? props.display : 'block'};
   font-family: ${props => props.theme.type.family.heading};
-  text-transform: ${props => props.textTransform ? props.textTransform : 'initial'};
+  text-transform: ${props => props.textTransform && props.textTransform};
   cursor: pointer;
   ${props =>
     fontSizer(
