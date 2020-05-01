@@ -28,7 +28,9 @@ const Header = () => {
       <div className={isFixed ? 'fixed-nav' : 'navigation'} ref={ref}>
         <div className="container">
           <div className="nav-container">
-            <div className="logo-container">Logo</div>
+            <div className="logo-container">
+              <img src="../digital_innerprize_logo.png" alt="digital-innerprize-logo"/>
+            </div>
             <div className="nav-right">
               <ul className="nav-list">
                 <li className="nav-item">
