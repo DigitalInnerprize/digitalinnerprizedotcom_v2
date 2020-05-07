@@ -15,10 +15,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 }
-html {
-  height: 100%;
-  box-sizing: border-box;
-}
 body {
   height: 100%;
   margin: 0;
@@ -36,8 +32,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
-#root {
-  height: 100%;
+img {
+  display: block;
+  width: 100%;
 }
 a {
   color: inherit;
@@ -92,5 +89,11 @@ table {
   td + td {
     padding-left: ${props => props.theme.spacing.horizontal.lg};
   }
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
 `;
