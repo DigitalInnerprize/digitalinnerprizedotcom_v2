@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ProjectsContext } from '../../context/index';
 import { useTrail, animated } from 'react-spring';
-import { Card } from '../styled/Card';
+import { Card } from '../styled/card';
 
 const WorkProjects = () => {
     const { projects } = useContext(ProjectsContext);

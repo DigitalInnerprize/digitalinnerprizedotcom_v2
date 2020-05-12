@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Waypoint } from 'react-waypoint';
 import { useSpring, animated as a, config } from 'react-spring';
 import { Link } from 'gatsby';
-import { Button } from '../styled/Button';
+import { Button } from '../styled/button';
 
 const RecentProjects = () => {
     const [on, toggle] = useState(false);
