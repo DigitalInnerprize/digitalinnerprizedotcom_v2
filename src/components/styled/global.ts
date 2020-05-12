@@ -17,14 +17,9 @@ export const GlobalStyle = createGlobalStyle`
 }
 body {
   height: 100%;
-  margin: 0;
+  box-sizing: border-box;
   font-family: ${props => props.theme.type.family.default};
-  ${props =>
-    fontSizer(
-      props.theme.type.size.body,
-      props.theme.type.multipliers.body,
-      props.theme.breakpoints
-    )}
+  ${props => fontSizer(props.theme.type.size.body, props.theme.type.multipliers.body, props.theme.breakpoints)}
   letter-spacing: ${props => props.theme.type.letterSpacing.narrow};
   line-height: ${props => props.theme.type.lineHeight.regular};
   color: ${props => props.theme.colors.gray4};
