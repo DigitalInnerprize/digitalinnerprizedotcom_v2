@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import is from 'typescript-styled-is';
 
 type FlexProps = {
     column?: boolean;
@@ -15,8 +16,11 @@ type FlexItemProps = {
 };
 
 type ContainerProps = {
+    marginTop?: string;
+    marginBottom?: string;
     marginLeft?: string;
     marginRight?: string;
+    maxWidth?: boolean;
 };
 
 export const FlexRow = styled.div<FlexProps>`
@@ -36,6 +40,11 @@ export const FlexItem = styled.div<FlexItemProps>`
 `;
 
 export const Container = styled.div<ContainerProps>`
+    margin-top: ${props => typeof props.marginTop !== 'undefined' && props.theme.spacing.vertical[props.marginTop]};
+    margin-bottom: ${props =>
+        typeof props.marginBottom !== 'undefined'
+            ? props.theme.spacing.vertical[props.marginBottom]
+            : props.theme.spacing.vertical.lg};
     margin-left: ${props => (props.marginLeft ? props.theme.spacing.horizontal[props.marginLeft] : 'auto')};
     margin-right: ${props =>
         props.marginRight
@@ -44,6 +53,9 @@ export const Container = styled.div<ContainerProps>`
             ? props.theme.spacing.horizontal[props.marginLeft]
             : 'auto'};
     height: 100%;
+    ${is('maxWidth')`
+      max-width: 1170;
+    `};
 `;
 
 export const FlexRowVAlign = styled.div`

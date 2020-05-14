@@ -2,7 +2,7 @@ import React from 'react';
 import { withTheme } from 'styled-components';
 import { FlexRow } from './styled/container.ts';
 import { FormContainer, Input } from './styled/form.ts';
-import { Button } from './styled/button.ts';
+import { ButtonPrimary } from './styled/button.tsx';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
@@ -58,9 +58,9 @@ const ContactForm = () => {
                     <Input name="company" placeholder="Company Name" ref={register} />
                     <Input name="email" type="email" placeholder="Email" ref={register} />
                     <Input name="phone" type="number" placeholder="Contact Number" ref={register} />
-                    <Button disabled={isSubmitting} type="submit">
+                    <ButtonPrimary disabled={isSubmitting} type="submit">
                         Send Message
-                    </Button>
+                    </ButtonPrimary>
                 </FlexRow>
             </form>
         </FormContainer>

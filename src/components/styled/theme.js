@@ -58,6 +58,7 @@ const theme = {
             md: '1.2em',
             lg: '1.8em',
             xl: '4.6em',
+            xlAlt: '6.2em',
             xxl: '8em',
         },
         vertical: {
@@ -69,6 +70,7 @@ const theme = {
             lg: '2em',
             lg2: '3em',
             xl: '4em',
+            xlAlt: '6em',
             xxl: '8em',
         },
     },
@@ -90,8 +92,8 @@ const theme = {
     },
     type: {
         family: {
-            default: 'Objektiv',
-            heading: 'Objektiv',
+            default: 'Open Sans',
+            heading: 'Poppins',
         },
         letterSpacing: {
             narrow: '-0.03em',
@@ -122,10 +124,10 @@ const theme = {
             },
         },
         size: {
-            h1: 20,
-            h1Alt: 26, // home header
-            h2: 10,
-            h3: 15.5,
+            h1: 50,
+            h1Alt: 34, // home header
+            h2: 26,
+            h3: 18,
             h4: 14,
             h5: 9,
             h6: 7,

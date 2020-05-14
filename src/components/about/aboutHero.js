@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Waypoint } from 'react-waypoint';
 import { useSpring, animated as a, config } from 'react-spring';
-import { Button } from '../styled/button';
+import { ButtonPrimary } from '../styled/button.tsx';
 import AnimatedImage from '../animateImage';
 import animatedJson from '../../images/animated/techno-male-animated.json';
 
@@ -31,7 +31,7 @@ const AboutHero = () => {
                             to meet them there.
                         </a.p>
                         <a.div style={animation}>
-                            <Button>request a quote</Button>
+                            <ButtonPrimary>request a quote</ButtonPrimary>
                         </a.div>
                     </div>
                     <div className="flex-2">

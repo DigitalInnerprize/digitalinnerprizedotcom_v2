@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Waypoint } from 'react-waypoint';
 import { useSpring, animated as a, config } from 'react-spring';
 import { Link } from 'gatsby';
-import { Button } from '../styled/button';
+import { ButtonPrimary } from '../styled/button.tsx';
 
 const RecentProjects = () => {
     const [on, toggle] = useState(false);
@@ -31,7 +31,7 @@ const RecentProjects = () => {
                         </a.p>
                         <a.div style={animation}>
                             <Link to="/work">
-                                <Button>see our work</Button>
+                                <ButtonPrimary>see our work</ButtonPrimary>
                             </Link>
                         </a.div>
                     </div>

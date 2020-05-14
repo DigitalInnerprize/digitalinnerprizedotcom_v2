@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import is from 'typescript-styled-is';
 import { Link } from 'gatsby';
 import { fontSizer } from './mixins';
 
@@ -9,13 +10,15 @@ type HeadingProps = {
     marginBottom?: string;
     fontWeight?: string | number;
     lineHeight?: string;
-    uppercase?: boolean;
     letterSpacing?: string;
     borderBottom?: string;
     hoverColor?: string;
     color?: string;
     size?: string;
     children: React.ReactNode;
+    lowercase?: boolean;
+    uppercase?: boolean;
+    capitalize?: boolean;
 };
 
 type PtagProps = {
@@ -26,7 +29,10 @@ type PtagProps = {
     size?: string;
     color?: string;
     bold?: boolean;
-    textTransform?: string;
+    fontWeight?: string | number;
+    lowercase?: boolean;
+    uppercase?: boolean;
+    capitalize?: boolean;
 };
 
 type TextProps = {
@@ -37,9 +43,13 @@ type TextProps = {
 type NavLinkProps = {
     marginTop?: string;
     marginBottom?: string;
+    noMargin?: boolean;
     display?: string;
-    textTransform?: string;
     size?: string;
+    fontWeight?: string | number;
+    lowercase?: boolean;
+    uppercase?: boolean;
+    capitalize?: boolean;
 };
 
 // headings
@@ -53,16 +63,9 @@ export const Heading = styled.h1<HeadingProps>`
             : props.theme.spacing.vertical.lg};
     font-family: ${props => props.theme.type.family.heading};
     color: ${props => (props.color ? props.theme.colors[props.color] : props.theme.colors.gray7)};
-    ${props =>
-        fontSizer(
-            props.size ? props.theme.type.size[props.size] : props.theme.type.size.body,
-            props.theme.type.multipliers.heading,
-            props.theme.breakpoints,
-        )};
     font-weight: ${props => (props.fontWeight ? props.fontWeight : 'normal')};
     line-height: ${props =>
         props.lineHeight ? props.theme.type.lineHeight[props.lineHeight] : props.theme.type.lineHeight.regular};
-    text-transform: ${props => props.uppercase && 'uppercase'};
     -webkit-font-smoothing: antialiased;
     cursor: default;
     letter-spacing: ${props =>
@@ -70,10 +73,24 @@ export const Heading = styled.h1<HeadingProps>`
             ? props.theme.type.letterSpacing[props.letterSpacing]
             : props.theme.type.letterSpacing.regular};
     border-bottom: ${props => props.borderBottom && `1px solid ${props.theme.colors.grayFade}`};
+    ${props =>
+        fontSizer(
+            props.size ? props.theme.type.size[props.size] : props.theme.type.size.body,
+            props.theme.type.multipliers.heading,
+            props.theme.breakpoints,
+        )};
 
-    a:hover {
-        color: ${props => props.hoverColor && props.theme.colors[props.hoverColor]};
-    }
+    ${is('uppercase')`
+      text-transform: uppercase;
+    `};
+
+    ${is('capitalize')`
+      text-transform: capitalize;
+    `};
+
+    ${is('lowercase')`
+      text-transform: capitalize;
+    `};
 `;
 
 export const H1 = (props: HeadingProps) => (
@@ -134,17 +151,28 @@ export const P = styled.p<PtagProps>`
             : props.theme.spacing.vertical.lg};
     margin-left: ${props => props.centered && 'auto'};
     margin-right: ${props => props.centered && 'auto'};
+    color: ${props => props.color && props.theme.colors[props.color]};
+    font-weight: ${props => props.fontWeight && props.fontWeight};
+    text-align: ${props => props.centered && 'center'};
+    cursor: default;
     ${props =>
         fontSizer(
             props.size ? props.theme.type.size[props.size] : props.theme.type.size.body,
             props.theme.type.multipliers.body,
             props.theme.breakpoints,
         )};
-    color: ${props => props.color && props.theme.colors[props.color]};
-    font-weight: ${props => props.bold && 'bold'};
-    text-transform: ${props => props.textTransform && props.textTransform};
-    text-align: ${props => props.centered && 'center'};
-    cursor: default;
+
+    ${is('uppercase')`
+      text-transform: uppercase;
+    `};
+
+    ${is('capitalize')`
+      text-transform: capitalize;
+    `};
+
+    ${is('lowercase')`
+      text-transform: capitalize;
+    `};
 `;
 export const SmallText = styled.span<TextProps>`
     max-width: 80%;
@@ -153,18 +181,34 @@ export const SmallText = styled.span<TextProps>`
     letter-spacing: ${props => props.theme.type.letterSpacing.regular};
     font-family: ${props => props.theme.type.family.heading};
     line-height: ${props => props.theme.type.lineHeight.extended};
-    text-transform: uppercase;
     font-weight: ${props => props.fontWeight && props.fontWeight};
     font-size: ${props => props.theme.type.size.sm}px;
     ${props => fontSizer(props.theme.type.size.xs, props.theme.type.multipliers.body, props.theme.breakpoints)};
+
+    ${is('uppercase')`
+      text-transform: uppercase;
+    `};
+
+    ${is('capitalize')`
+      text-transform: capitalize;
+    `};
+
+    ${is('lowercase')`
+      text-transform: capitalize;
+    `};
 `;
 export const Em = styled.span`
     font-style: italic;
 `;
 
 // links
-export const NavLink = styled(Link)`
-    margin-top: ${props => typeof props.marginTop !== 'undefined' && props.theme.spacing.vertical[props.marginTop]};
+export const NavLink = styled(Link)<NavLinkProps>`
+    margin-top: ${props =>
+        typeof props.marginTop !== 'undefined'
+            ? props.theme.spacing.vertical[props.marginTop]
+            : props.noMargin
+            ? 0
+            : props.theme.spacing.vertical.lg};
     margin-bottom: ${props =>
         typeof props.marginBottom !== 'undefined'
             ? props.theme.spacing.vertical[props.marginBottom]
@@ -173,13 +217,25 @@ export const NavLink = styled(Link)`
             : props.theme.spacing.vertical.lg};
     display: ${props => (props.display ? props.display : 'block')};
     font-family: ${props => props.theme.type.family.heading};
-    text-transform: ${props => props.textTransform && props.textTransform};
+    font-weight: ${props => props.fontWeight && props.fontWeight};
     ${props =>
         fontSizer(
             props.size ? props.theme.type.size[props.size] : props.theme.type.size.body,
             props.theme.type.multipliers.body,
             props.theme.breakpoints,
         )};
+
+    ${is('uppercase')`
+      text-transform: uppercase;
+    `};
+
+    ${is('capitalize')`
+      text-transform: capitalize;
+    `};
+
+    ${is('lowercase')`
+      text-transform: capitalize;
+    `};
 `;
 
 export const NavClickLink = styled.a<NavLinkProps>`
@@ -190,7 +246,7 @@ export const NavClickLink = styled.a<NavLinkProps>`
             : props.theme.spacing.vertical.lg};
     display: ${props => (props.display ? props.display : 'block')};
     font-family: ${props => props.theme.type.family.heading};
-    text-transform: ${props => props.textTransform && props.textTransform};
+    font-weight: ${props => props.fontWeight && props.fontWeight};
     cursor: pointer;
     ${props =>
         fontSizer(
@@ -198,4 +254,16 @@ export const NavClickLink = styled.a<NavLinkProps>`
             props.theme.type.multipliers.body,
             props.theme.breakpoints,
         )};
+
+    ${is('uppercase')`
+      text-transform: uppercase;
+    `};
+
+    ${is('capitalize')`
+      text-transform: capitalize;
+    `};
+
+    ${is('lowercase')`
+      text-transform: capitalize;
+    `};
 `;

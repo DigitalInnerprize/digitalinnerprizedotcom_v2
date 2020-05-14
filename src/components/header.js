@@ -1,4 +1,5 @@
 import { Link } from 'gatsby';
+import { NavLink } from './styled/type';
 import { MenuItem, Menu, MenuButton } from './hamburgerMenu';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -30,16 +31,24 @@ const Header = () => {
                         <div className="nav-right">
                             <ul className="nav-list">
                                 <li className="nav-item">
-                                    <Link to="/">home</Link>
+                                    <NavLink fontWeight="semi-bold" size="h3" to="/">
+                                        home
+                                    </NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="/about">about</Link>
+                                    <NavLink fontWeight="semi-bold" size="h3" to="/about">
+                                        about
+                                    </NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="/work">work</Link>
+                                    <NavLink fontWeight="semi-bold" size="h3" to="/work">
+                                        work
+                                    </NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to="/contact">contact</Link>
+                                    <NavLink fontWeight="semi-bold" size="h3" to="/contact">
+                                        contact
+                                    </NavLink>
                                 </li>
                             </ul>
 

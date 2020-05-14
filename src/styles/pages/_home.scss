@@ -1,6 +1,6 @@
 .home-hero-image {
-  margin: 0 auto;
-  max-width: 750px;
+  // margin: 0 auto;
+  // max-width: 750px;
 }
 
 .home-hero-content {
@@ -30,6 +30,7 @@
     @include breakpoint-custom($screen-xs-max) {
       flex-direction: row;
     }
+
     .service-link {
       flex: 1;
       @include margin__top-bottom(0px, 100px);
@@ -45,6 +46,7 @@
 
 .home-cta {
   @include padding__top-bottom(0px, 100px);
+
   .btn-container {
     text-align: center;
     margin-top: 30px;
