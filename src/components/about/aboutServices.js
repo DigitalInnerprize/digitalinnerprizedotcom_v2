@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { Waypoint } from 'react-waypoint';
 import { useTrail, animated as a, config } from 'react-spring';
+import { H2, H3, P } from '../styled/type.tsx';
 import Svg from '../Svg';
 import Desktop from '../../images/svg/desktop.svg';
 import Mobile from '../../images/svg/mobile.svg';
@@ -55,7 +56,9 @@ const HomeServices = () => {
                     }}
                 />
                 <div className="about-services">
-                    <h2 className="sub-title">What we do</h2>
+                    <H2 size="h2" capitalize fontWeight={700} marginBottom="sm">
+                        What we do
+                    </H2>
                     <div className="services-list">
                         {trail.map((animation, index) => {
                             const { title, svg, paragraph } = svgArray[index];
@@ -65,8 +68,12 @@ const HomeServices = () => {
                                         <div className="service-link">
                                             <Svg svg={svg} />
                                             <div className="service-link-content">
-                                                <h3 className="service-title">{title}</h3>
-                                                <p className="service-description">{paragraph}</p>
+                                                <H3 size="h3" capitalize fontWeight={600} marginBottom="0">
+                                                    {title}
+                                                </H3>
+                                                <P marginTop="0" color="gray2">
+                                                    {paragraph}
+                                                </P>
                                             </div>
                                         </div>
                                     </Link>
