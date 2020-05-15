@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import { Flex } from '../styled/flexBox.ts';
+import { H2, H3 } from '../styled/type.tsx';
 import { Waypoint } from 'react-waypoint';
 import { useTrail, animated as a, config } from 'react-spring';
 import Svg from '../Svg';
@@ -40,20 +41,22 @@ const HomeServices = () => {
                 }}
             />
             <div className="container">
-                <h2 className="sub-title">We specialize in</h2>
-                <div className="services-list">
+                <H2 capitalize fontWeight={700}>
+                    We specialize in
+                </H2>
+                <Flex className="services-list">
                     {trail.map((animation, index) => {
                         const { title, svg } = svgArray[index];
                         return (
                             <a.div key={title} style={animation}>
-                                <Link to="/work" className="service-link">
-                                    <Svg svg={svg} />
-                                    <h3 className="service-title">{title}</h3>
-                                </Link>
+                                <Svg svg={svg} />
+                                <H3 className="service-title" fontWeight={600}>
+                                    {title}
+                                </H3>
                             </a.div>
                         );
                     })}
-                </div>
+                </Flex>
             </div>
         </section>
     );

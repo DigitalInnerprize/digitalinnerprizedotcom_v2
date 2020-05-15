@@ -33,20 +33,20 @@ const Footer = () => {
 
     return (
         <Wrapper>
-            <Container marginLeft="auto">
+            <Container marginLeftAuto>
                 <Content>
                     <div className="contact-info">
                         <H3 uppercase>contact</H3>
                         <P>Digitalinnerprize @gmail.com</P>
                         <div className="copyright">
-                            <P>{year} & copy; Digital Innerprize Llc </P>
+                            <P>{year} &copy; Digital Innerprize Llc </P>
                         </div>
                     </div>
                     <div className="socials">
                         <H3 uppercase>follow us</H3>
                         <UL column className="social-links">
                             <LI>
-                                <NavClickLink textTransform="Capitalize" href="#">
+                                <NavClickLink capitalize href="#">
                                     facebook
                                 </NavClickLink>
                             </LI>

@@ -11,6 +11,7 @@ const theme = {
         xxl: 1900,
     },
     colors: {
+        gray2: '#787878',
         gray4: '#4a4a4a',
         gray7: '#76797e',
         gray9: '#9b9b9b',
@@ -24,7 +25,9 @@ const theme = {
         premiumHover: '#2c55c7',
         primary: '#0033a0',
         white: '#fff',
-        whiteAlt: '#efeff3',
+        whiteAlt: '#f9f9f9',
+        black: '#222222',
+        lightBlue: '#5fcff8',
         special: {
             blueDepthDot1: '#264d9d',
             blueDepthDot2: '#173870',
@@ -34,7 +37,7 @@ const theme = {
         },
     },
     hardCodedSizes: {
-        buttonHeight: 38,
+        buttonHeight: 50,
         buttonMinWidth: 168,
         containedInnerPaperContentHeight: 282,
         minPaperHeight: 600,
@@ -93,7 +96,7 @@ const theme = {
     type: {
         family: {
             default: 'Open Sans',
-            heading: 'Poppins',
+            heading: 'Open Sans',
         },
         letterSpacing: {
             narrow: '-0.03em',
@@ -125,14 +128,15 @@ const theme = {
         },
         size: {
             h1: 50,
-            h1Alt: 34, // home header
-            h2: 26,
+            h1Alt: 36, // home header
+            h2: 28,
             h3: 18,
             h4: 14,
             h5: 9,
             h6: 7,
             splashLogotype: 32,
             body: 14,
+            bodyAlt: 15,
             bodyLarge: 16,
             xxs: 9,
             xs: 10.5,

@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import { fontSizer, transitionXs } from './mixins';
 import is from 'typescript-styled-is';
 
-type ButtonProps = {
+type ColorProps = {
+    colorhover?: string;
+    backgroundhover?: string;
+};
+
+type ButtonProps = ColorProps & {
     children: React.ReactNode;
     normal?: {
         color?: string;
@@ -15,16 +20,26 @@ type ButtonProps = {
     };
     width?: string;
     size?: string;
-    colorHover?: string;
-    backgroundHover?: string;
+    color?: string;
+    hovercolor?: string;
+    backgroundcolor?: string;
+    backgroundhover?: string;
+    borderRadius?: number;
     lowercase?: boolean;
     uppercase?: boolean;
     capitalize?: boolean;
 };
 
 type ButtonTextProps = {
+    paddingTop?: string;
     small?: boolean;
+    size?: string;
     fontWeight?: string | number;
+};
+
+type BBContainerProps = ColorProps & {
+    color: string;
+    background: string;
 };
 
 type BBProps = {
@@ -33,10 +48,10 @@ type BBProps = {
 };
 
 export const Button = styled.button.attrs({
-    color: props => (props.normal ? props.theme.colors[props.normal.color] : 'whiteAlt'),
-    colorhover: props => (props.hover ? props.theme.colors[props.hover.color] : 'whiteAlt'),
-    background: props => (props.normal ? props.theme.colors[props.normal.background] : 'primary'),
-    backgroundhover: props => (props.hover ? props.theme.colors[props.hover.background] : 'blueAlt'),
+    color: props => (props.normal ? props.theme.colors[props.normal.color] : props.color),
+    colorhover: props => (props.hover ? props.theme.colors[props.hover.color] : props.hovercolor),
+    background: props => (props.normal ? props.theme.colors[props.normal.background] : props.backgroundcolor),
+    backgroundhover: props => (props.hover ? props.theme.colors[props.hover.background] : props.backgroundcolor),
 })<ButtonProps>`
     display: inline-block;
     min-width: ${props => props.theme.hardCodedSizes.buttonMinWidth}px;
@@ -45,18 +60,24 @@ export const Button = styled.button.attrs({
     padding: 0 24px;
     border: 0;
     letter-spacing: ${props => props.theme.type.letterSpacing.wide};
-    border-radius: ${props => props.theme.hardCodedSizes.buttonHeight / 2}px;
+    border-radius: ${props => !props.borderRadius && `${props.theme.hardCodedSizes.buttonHeight / 2}px`};
     line-height: ${props => props.theme.hardCodedSizes.buttonHeight}px;
     cursor: pointer;
     color: ${props => props.color};
     background: ${props => props.background};
     ${transitionXs};
     ${props =>
+        !props.includeBtnText &&
         fontSizer(
             props.size ? props.theme.type.size[props.size] : props.theme.type.size.body,
             props.theme.type.multipliers.heading,
             props.theme.breakpoints,
         )};
+
+    /******************************** textTransform ********************************/
+    ${is('borderRadius')`
+      border-radius: ${props => props.borderRadius}px;
+    `};
 
     &:hover {
         color: ${props => props.colorhover};
@@ -66,11 +87,17 @@ export const Button = styled.button.attrs({
 
 export const ButtonText = styled.span<ButtonTextProps>`
     display: block;
-    padding-top: ${props => props.theme.spacing.vertical.sm};
+    padding-top: ${props => typeof props.paddingTop !== 'undefined' && props.theme.spacing.vertical[props.paddingTop]};
     font-size: ${props => (props.small ? props.theme.type.size.xxs : props.theme.type.size.md)}px;
     font-family: ${props => props.theme.type.family.heading};
     font-weight: ${props => props.fontWeight && props.fontWeight};
     letter-spacing: ${props => props.theme.type.letterSpacing.wide};
+    ${props =>
+        fontSizer(
+            props.size ? props.theme.type.size[props.size] : props.theme.type.size.body,
+            props.theme.type.multipliers.heading,
+            props.theme.breakpoints,
+        )};
 
     /******************************** textTransform ********************************/
     ${is('uppercase')`
@@ -90,21 +117,22 @@ export const ButtonTextAlt = styled.span`
     display: block;
 `;
 
-const BigButtonContainer = styled.div`
+const BigButtonContainer = styled.div<BBContainerProps>`
     display: inline-block;
     padding-top: ${props => props.theme.spacing.fixed.md};
     padding-left: ${props => props.theme.spacing.fixed.md};
     padding-right: ${props => props.theme.spacing.fixed.md};
     padding-bottom: ${props => props.theme.spacing.vertical.lg};
-    color: ${props => props.theme.colors.gray4};
     text-align: left;
-    background: ${props => props.theme.colors.grayFadeAlt};
     border-radius: 8px;
+    color: ${props => props.color};
+    background: ${props => props.background};
     ${transitionXs};
 
     &:hover {
-        color: ${props => props.theme.colors.white};
-        background: ${props => props.theme.colors.primary};
+        color: ${props => (props.colorhover ? props.theme.colors[props.colorhover] : props.colorhover)};
+        background: ${props =>
+            props.backgroundhover ? props.theme.colors[props.backgroundhover] : props.backgroundhover};
     }
 `;
 
@@ -131,11 +159,12 @@ export const ButtonPrimary = (props: ButtonProps) => (
     <Button
         {...props}
         normal={{
-            color: 'gray',
-            background: 'primary',
+            color: 'white',
+            background: 'lightBlue',
         }}
         hover={{ color: 'white', background: 'primary' }}
         regularcase={1}
+        borderRadius={4}
     >
         {props.children}
     </Button>
@@ -145,12 +174,12 @@ export const ButtonSecondary = (props: ButtonProps) => (
     <Button
         {...props}
         normal={{
-            color: 'gray4',
-            background: 'primary',
+            color: 'white',
+            background: 'lightBlue',
         }}
         hover={{ color: 'white', background: 'primary' }}
         regularcase={1}
-        width="100%"
+        borderRadius={4}
     >
         {props.children}
     </Button>

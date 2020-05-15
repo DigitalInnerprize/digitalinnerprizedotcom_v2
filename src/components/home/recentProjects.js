@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Waypoint } from 'react-waypoint';
 import { useSpring, animated as a, config } from 'react-spring';
 import { Link } from 'gatsby';
+import { AnimatedH2, AnimatedP } from '../styled/type.tsx';
 import { ButtonPrimary } from '../styled/button.tsx';
 
 const RecentProjects = () => {
@@ -22,16 +23,16 @@ const RecentProjects = () => {
                                 if (!on) toggle(true);
                             }}
                         />
-                        <a.h2 style={animation} className="sub-title">
+                        <AnimatedH2 style={animation} size="h2" marginBottom="0" capitalize fontWeight={700}>
                             recent projects
-                        </a.h2>
-                        <a.p style={animation} className="description-content">
+                        </AnimatedH2>
+                        <AnimatedP style={animation} marginTop="md" color="gray2">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae voluptate totam, fugit illo
                             eos ratione suscipit aperiam eligendi expedita, illum quia. Odit dolorem sequi rerum p
-                        </a.p>
+                        </AnimatedP>
                         <a.div style={animation}>
                             <Link to="/work">
-                                <ButtonPrimary>see our work</ButtonPrimary>
+                                <ButtonPrimary>See our work</ButtonPrimary>
                             </Link>
                         </a.div>
                     </div>

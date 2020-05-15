@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSpring, animated as a } from 'react-spring';
 import { Link } from 'gatsby';
 import { Flex, FlexItem } from '../styled/flexBox';
-import { ButtonPrimary } from '../styled/button.tsx';
+import { ButtonPrimary, ButtonText } from '../styled/button.tsx';
 import { H1, P } from '../styled/type';
 import animatedJson from '../../images/animated/online-buy-products-animated.json';
 import AnimatedImage from '../animateImage';
@@ -22,20 +22,22 @@ const HomeHero = () => {
                 <Flex>
                     <FlexItem alignCenter>
                         <Div style={fade}>
-                            <H1 marginBottom="0" capitalize>
-                                digital innerprize
+                            <H1 marginBottom="0" capitalize fontWeight={700}>
+                                We help grow brands
                             </H1>
-                            <P marginTop="lg" size="h3">
+                            <P marginTop="md" color="gray2" borderLeft>
                                 We believe both smart businesses and entrepreneurs must fully embrace modern ways of
                                 reaching out to their customers in order to succeed in today's crowded marketplace.
                             </P>
                             <Link to="/contact">
-                                <ButtonPrimary>Grow your brand</ButtonPrimary>
+                                <ButtonPrimary includeBtnText>
+                                    <ButtonText fontWeight="bold">Grow your brand</ButtonText>
+                                </ButtonPrimary>
                             </Link>
                         </Div>
                     </FlexItem>
                     <FlexItem>
-                        <div className="home-hero-image">
+                        <div>
                             <AnimatedImage animatedJson={animatedJson} width={800} height={675} />
                         </div>
                     </FlexItem>

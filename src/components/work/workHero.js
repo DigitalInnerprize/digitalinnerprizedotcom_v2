@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Waypoint } from 'react-waypoint';
 import { useSpring, animated as a, config } from 'react-spring';
+import { Flex, FlexItem } from '../styled/flexBox.ts';
+import { AnimatedH1, AnimatedP } from '../styled/type.tsx';
 import animatedJson from '../../images/animated/editing-shapes-female-animated.json';
 import AnimatedImage from '../animateImage';
 
@@ -14,30 +16,30 @@ const WorkHero = () => {
     return (
         <div className="work-page-heading">
             <div className="container">
-                <div className="flex-container work-page">
-                    <div className="flex-1 align-center">
+                <Flex>
+                    <FlexItem alignCenter flex={1}>
                         <Waypoint
                             onEnter={() => {
                                 if (!on) toggle(true);
                             }}
                         />
-                        <a.h1 style={animation} className="title">
+                        <AnimatedH1 style={animation} size="h1" marginBottom="0" capitalize fontWeight={700}>
                             Work we've done
-                        </a.h1>
-                        <a.p style={animation} className="description-content">
+                        </AnimatedH1>
+                        <AnimatedP style={animation} marginTop="md" color="gray2">
                             Digital Innerprize has designed & built solutions for a range of clients, from startups to
-                            multinational corporations. Check out some of our recent projects below
-                        </a.p>
-                    </div>
-                    <div className="flex-2">
+                            multinational corporations. Check out some of our recent projects below.
+                        </AnimatedP>
+                    </FlexItem>
+                    <FlexItem flex={1}>
                         <AnimatedImage
                             animatedJson={animatedJson}
                             altText="about page image"
                             height={500}
                             width={500}
                         />
-                    </div>
-                </div>
+                    </FlexItem>
+                </Flex>
             </div>
         </div>
     );

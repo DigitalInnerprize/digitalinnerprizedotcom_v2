@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Waypoint } from 'react-waypoint';
 import { useSpring, animated as a, config } from 'react-spring';
+import { Flex, FlexItem } from '../styled/flexBox.ts';
+import { AnimatedH1, AnimatedP } from '../styled/type.tsx';
 import { ButtonPrimary } from '../styled/button.tsx';
 import AnimatedImage from '../animateImage';
 import animatedJson from '../../images/animated/techno-male-animated.json';
@@ -15,34 +17,34 @@ const AboutHero = () => {
     return (
         <div className="about-page-heading">
             <div className="container">
-                <div className="flex-container about-page">
-                    <div className="flex-1 align-center">
+                <Flex>
+                    <FlexItem alignCenter flex={1}>
                         <Waypoint
                             onEnter={() => {
                                 if (!on) toggle(true);
                             }}
                         />
-                        <a.h1 style={animation} className="title">
+                        <AnimatedH1 style={animation} size="h1" marginBottom="0" capitalize fontWeight={700}>
                             Hi from Digital Innerprize
-                        </a.h1>
-                        <a.p style={animation} className="description-content">
+                        </AnimatedH1>
+                        <AnimatedP style={animation} marginTop="md" color="gray2">
                             We think smart businesses and entrepreneurs must fully embrace modern ways of reaching their
                             customers to succeed in today’s crowded marketplace your customers are online… and you need
                             to meet them there.
-                        </a.p>
+                        </AnimatedP>
                         <a.div style={animation}>
                             <ButtonPrimary>request a quote</ButtonPrimary>
                         </a.div>
-                    </div>
-                    <div className="flex-2">
+                    </FlexItem>
+                    <FlexItem flex={1}>
                         <AnimatedImage
                             animatedJson={animatedJson}
                             altText="about page image"
                             height={550}
                             width={500}
                         />
-                    </div>
-                </div>
+                    </FlexItem>
+                </Flex>
             </div>
         </div>
     );

@@ -20,7 +20,8 @@ type ContainerProps = {
     marginBottom?: string;
     marginLeft?: string;
     marginRight?: string;
-    maxWidth?: boolean;
+    maxWidth?: number;
+    minWidth?: number;
 };
 
 export const FlexRow = styled.div<FlexProps>`
@@ -40,21 +41,30 @@ export const FlexItem = styled.div<FlexItemProps>`
 `;
 
 export const Container = styled.div<ContainerProps>`
-    margin-top: ${props => typeof props.marginTop !== 'undefined' && props.theme.spacing.vertical[props.marginTop]};
-    margin-bottom: ${props =>
-        typeof props.marginBottom !== 'undefined'
-            ? props.theme.spacing.vertical[props.marginBottom]
-            : props.theme.spacing.vertical.lg};
-    margin-left: ${props => (props.marginLeft ? props.theme.spacing.horizontal[props.marginLeft] : 'auto')};
-    margin-right: ${props =>
-        props.marginRight
-            ? props.theme.spacing.horizontal[props.marginRight]
-            : props.marginLeft
-            ? props.theme.spacing.horizontal[props.marginLeft]
-            : 'auto'};
+    margin-top: ${props => props.marginTop && props.theme.spacing.vertical[props.marginTop]};
+    margin-bottom: ${props => props.marginBottom && props.theme.spacing.vertical[props.marginBottom]};
+    margin-left: ${props => props.marginLeft && props.theme.spacing.horizontal[props.marginLeft]};
+    margin-right: ${props => props.marginRight && props.theme.spacing.horizontal[props.marginRight]};
     height: 100%;
     ${is('maxWidth')`
-      max-width: 1170;
+      max-width: ${props => props.maxWidth}px;
+    `};
+
+    ${is('minWidth')`
+      min-width: ${props => props.minWidth}px;
+    `};
+
+    ${is('marginLeftRightAuto')`
+      margin-left: auto;
+      margin-right: auto;
+    `};
+
+    ${is('marginLeftAuto')`
+      margin-left: auto;
+    `};
+
+    ${is('marginRightAuto')`
+      margin-right: auto;
     `};
 `;
 
