@@ -13,7 +13,7 @@ const RecentProjects = () => {
         transform: on ? 'translate3d(0,0,0)' : 'translate3d(-50%,0,0)',
         config: config.molasses,
     });
-    const breakpoint = useMediaQuery('(min-width: 921px)');
+    const breakpoint = useMediaQuery('(max-width: 921px)');
 
     return (
         <section className="home-recent-projects">
@@ -29,13 +29,7 @@ const RecentProjects = () => {
                         <AnimatedH2 style={animation} size="h2" marginBottom="0" capitalize fontWeight={700}>
                             recent projects
                         </AnimatedH2>
-                        <AnimatedP
-                            style={animation}
-                            marginTop="md"
-                            color="gray2"
-                            paddingLeft={breakpoint ? 'md' : 'lg2'}
-                            paddingRight={breakpoint ? 'md' : 'lg2'}
-                        >
+                        <AnimatedP style={animation} marginTop="md" color="gray2">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae voluptate totam, fugit illo
                             eos ratione suscipit aperiam eligendi expedita, illum quia. Odit dolorem sequi rerum p
                         </AnimatedP>
