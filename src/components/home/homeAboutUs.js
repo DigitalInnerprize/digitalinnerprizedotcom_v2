@@ -46,7 +46,7 @@ const HomeAboutUs = () => {
                         <div>
                             <AnimatedImage
                                 animatedJson={animatedJson}
-                                width={breakpoint.tablet && 800}
+                                width={breakpoint.tablet && 600}
                                 height={breakpoint.tablet ? 600 : 525}
                             />
                         </div>
