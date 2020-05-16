@@ -3,7 +3,7 @@ import { Waypoint } from 'react-waypoint';
 import { useSpring, config } from 'react-spring';
 import { Flex, FlexItem } from '../styled/flexBox.ts';
 import { AnimatedH2, AnimatedP } from '../styled/type.tsx';
-import { useMediaQuery } from '../../hooks/useMediaQuery.ts';
+import { useBreakpoint } from '../../context/breakpoint.tsx';
 import animatedJson from '../../images/animated/communication-animated-illustration.json';
 import AnimatedImage from '../animateImage';
 
@@ -14,7 +14,7 @@ const HomeAboutUs = () => {
         transform: on ? 'translate3d(0,0,0)' : 'translate3d(50%,0,0)',
         config: config.molasses,
     });
-    const breakpoint = useMediaQuery('(min-width: 921px)');
+    const breakpoint = useBreakpoint();
 
     return (
         <section className="home-about">
@@ -27,11 +27,11 @@ const HomeAboutUs = () => {
                         }}
                     />
                     <FlexItem
-                        order={breakpoint && 1}
-                        textRight={breakpoint}
+                        order={breakpoint.tablet && 1}
+                        textRight={breakpoint.tablet}
                         alignCenter
-                        paddingLeft={breakpoint ? 'md' : 'lg2'}
-                        paddingRight={breakpoint ? 'md' : 'lg2'}
+                        paddingLeft={breakpoint.mobile ? 'lg2' : 'md'}
+                        paddingRight={breakpoint.mobile ? 'lg2' : 'md'}
                     >
                         <AnimatedH2 style={animation} size="h2" marginBottom="0" capitalize fontWeight={700}>
                             about us

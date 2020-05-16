@@ -4,7 +4,7 @@ import { useSpring, animated as a, config } from 'react-spring';
 import { Flex, FlexItem } from '../styled/flexBox.ts';
 import { AnimatedH1, AnimatedP } from '../styled/type.tsx';
 import { ButtonPrimary, ButtonText } from '../styled/button.tsx';
-import { useMediaQuery } from '../../hooks/useMediaQuery.ts';
+import { useBreakpoint } from '../../context/breakpoint.tsx';
 import AnimatedImage from '../animateImage';
 import animatedJson from '../../images/animated/home-office-animated-illustration.json';
 
@@ -15,7 +15,7 @@ const AboutHero = () => {
         transform: on ? 'translate3d(0,0,0)' : 'translate3d(-50%,0,0)',
         config: config.molasses,
     });
-    const breakpoint = useMediaQuery('(min-width: 921px)');
+    const breakpoint = useBreakpoint();
 
     return (
         <div className="about-page-heading">
@@ -23,10 +23,10 @@ const AboutHero = () => {
                 <Flex columnMobile>
                     <FlexItem
                         alignCenter
-                        textLeft={breakpoint}
+                        textLeft={breakpoint.tablet}
                         flex={1}
-                        paddingLeft={breakpoint ? 'md' : 'lg2'}
-                        paddingRight={breakpoint ? 'md' : 'lg2'}
+                        paddingLeft={breakpoint.mobile ? 'lg2' : 'md'}
+                        paddingRight={breakpoint.mobile ? 'lg2' : 'md'}
                     >
                         <Waypoint
                             onEnter={() => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProjectsProvider } from './projects';
 import { ViewportProvider } from './viewport.tsx';
+import { BreakpointProvider } from './breakpoint.tsx';
 
 function ProviderComposer({ contexts, children }) {
     return contexts.reduceRight(
@@ -12,8 +13,22 @@ function ProviderComposer({ contexts, children }) {
     );
 }
 
+const queries = {
+    mobile: '(max-width: 767px)',
+    tablet: '(min-width: 768px)',
+    desktop: '(min-width: 991px)',
+    portrait: '(orientation: portrait)',
+    landscape: '(orientation: landscape)', // we can check orientation also
+};
+
 function ContextProvider({ children }) {
-    return <ProviderComposer contexts={[<ViewportProvider />, <ProjectsProvider />]}>{children}</ProviderComposer>;
+    return (
+        <ProviderComposer
+            contexts={[<BreakpointProvider queries={queries} />, <ViewportProvider />, <ProjectsProvider />]}
+        >
+            {children}
+        </ProviderComposer>
+    );
 }
 
 export { ContextProvider };

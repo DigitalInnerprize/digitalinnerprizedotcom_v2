@@ -6,7 +6,7 @@ import { Flex, FlexItem } from '../styled/flexBox.ts';
 import { ButtonPrimary, ButtonText } from '../styled/button.tsx';
 import { H1, P } from '../styled/type.tsx';
 import { media } from '../../utils/mediaQueries.ts';
-import { useMediaQuery } from '../../hooks/useMediaQuery.ts';
+import { useBreakpoint } from '../../context/breakpoint.tsx';
 
 import animatedJson from '../../images/animated/management-animated-illustration.json';
 import AnimatedImage from '../animateImage';
@@ -24,8 +24,7 @@ const Div = styled(a.div)`
 
 const HomeHero = () => {
     const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
-    const breakpoint = useMediaQuery('(min-width: 921px)');
-    console.log('breakpoint =', breakpoint);
+    const breakpoint = useBreakpoint();
 
     return (
         <section className="home-hero">
@@ -33,15 +32,15 @@ const HomeHero = () => {
                 <Flex columnMobile>
                     <FlexItem
                         alignCenter
-                        textLeft={breakpoint}
-                        paddingLeft={breakpoint ? 'md' : 'lg2'}
-                        paddingRight={breakpoint ? 'md' : 'lg2'}
+                        textLeft={breakpoint.tablet}
+                        paddingLeft={breakpoint.mobile ? 'lg2' : 'md'}
+                        paddingRight={breakpoint.mobile ? 'lg2' : 'md'}
                     >
                         <Div style={fade}>
                             <H1 marginBottom="0" capitalize fontWeight={700}>
                                 We help grow brands
                             </H1>
-                            <P marginTop="md" color="gray2" borderLeft={breakpoint}>
+                            <P marginTop="md" color="gray2" borderLeft={breakpoint.tablet}>
                                 We believe both smart businesses and entrepreneurs must fully embrace modern ways of
                                 reaching out to their customers in order to succeed in today's crowded marketplace.
                             </P>

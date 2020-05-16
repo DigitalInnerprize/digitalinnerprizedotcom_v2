@@ -8,7 +8,7 @@ type UseViewProps = {
 
 const viewportContext = React.createContext({} as UseViewProps);
 
-export const ViewportProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const ViewportProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     // This is the exact same logic that we previously had in our hook
 
     const [width, setWidth] = React.useState(window.innerWidth);
@@ -33,9 +33,11 @@ export const ViewportProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 /* Rewrite the "useViewport" hook to pull the width and height values
    out of the context instead of calculating them itself */
 
-export const useViewport = () => {
+function useViewport() {
     /* We can use the "useContext" Hook to acccess a context from within
      another Hook, remember, Hooks are composable! */
     const { width, height } = React.useContext<UseViewProps>(viewportContext);
     return { width, height };
-};
+}
+
+export { useViewport, ViewportProvider };

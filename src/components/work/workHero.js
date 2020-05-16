@@ -5,7 +5,7 @@ import { Flex, FlexItem } from '../styled/flexBox.ts';
 import { AnimatedH1, AnimatedP } from '../styled/type.tsx';
 import animatedJson from '../../images/animated/editing-animated-illustration.json';
 import AnimatedImage from '../animateImage';
-import { useMediaQuery } from '../../hooks/useMediaQuery.ts';
+import { useBreakpoint } from '../../context/breakpoint.tsx';
 import { ButtonPrimary, ButtonText } from '../styled/button.tsx';
 
 const WorkHero = () => {
@@ -15,7 +15,7 @@ const WorkHero = () => {
         transform: on ? 'translate3d(0,0,0)' : 'translate3d(-50%,0,0)',
         config: config.molasses,
     });
-    const breakpoint = useMediaQuery('(min-width: 921px)');
+    const breakpoint = useBreakpoint();
 
     return (
         <div className="work-page-heading">
@@ -23,10 +23,10 @@ const WorkHero = () => {
                 <Flex columnMobile>
                     <FlexItem
                         alignCenter
-                        textLeft={breakpoint}
+                        textLeft={breakpoint.tablet}
                         flex={1}
-                        paddingLeft={breakpoint ? 'md' : 'lg2'}
-                        paddingRight={breakpoint ? 'md' : 'lg2'}
+                        paddingLeft={breakpoint.mobile ? 'lg2' : 'md'}
+                        paddingRight={breakpoint ? 'lg2' : 'md'}
                     >
                         <Waypoint
                             onEnter={() => {

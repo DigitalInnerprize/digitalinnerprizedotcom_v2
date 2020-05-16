@@ -4,7 +4,7 @@ const defaultValue = {};
 
 const BreakpointContext = createContext(defaultValue);
 
-const BreakpointProvider = ({ children, queries }) => {
+const BreakpointProvider = ({ children, queries }: { children: React.ReactNode; queries: {} }) => {
     const [queryMatch, setQueryMatch] = useState({});
 
     useEffect(() => {
