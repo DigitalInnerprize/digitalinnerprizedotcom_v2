@@ -9,6 +9,7 @@ import Mobile from '../../images/svg/mobile.svg';
 import Design from '../../images/svg/icon-design.svg';
 import Chart from '../../images/svg/chart.svg';
 import Launch from '../../images/svg/launch.svg';
+import Search from '../../images/svg/search.svg';
 
 const svgArray = [
     {
@@ -35,6 +36,11 @@ const svgArray = [
         title: 'brand identity design',
         paragraph: `We design custom logos and brand identity for companies just starting out or in need of a refresh. From style-guides to stationery.`,
         svg: Chart,
+    },
+    {
+        title: 'search engine optimization',
+        paragraph: `Search engine optimization is the process of increasing the quantity of visitors on your platform by google or various search engine methods online`,
+        svg: Search,
     },
 ];
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { media } from '../utils/mediaQueries';
+import { media } from '../utils/mediaQueries.ts';
 import { Container } from './styled/container.ts';
 import { UL, LI } from './styled/list.ts';
 import { H3, P, NavClickLink } from './styled/type.tsx';
@@ -51,7 +51,7 @@ const Footer = () => {
                                 </NavClickLink>
                             </LI>
                             <LI>
-                                <NavClickLink textTransform="Capitalize" href="#">
+                                <NavClickLink capitalize href="#">
                                     instagram
                                 </NavClickLink>
                             </LI>

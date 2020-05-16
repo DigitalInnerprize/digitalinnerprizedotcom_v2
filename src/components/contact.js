@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTheme } from 'styled-components';
-import { FlexRow } from './styled/container.ts';
+import { Flex } from './styled/flexBox.ts';
 import { FormContainer, Input } from './styled/form.ts';
 import { ButtonPrimary } from './styled/button.tsx';
 import { useForm } from 'react-hook-form';
@@ -53,7 +53,7 @@ const ContactForm = () => {
             {errors.email && <p className="error-text">{errors.email.message}</p>}
             {errors.phone && <p className="error-text">{errors.phone.message}</p>}
             <form onSubmit={handleSubmit(onSubmit)}>
-                <FlexRow column marginAuto paddingTop="md">
+                <Flex column marginAuto>
                     <Input name="name" placeholder="Name" ref={register} />
                     <Input name="company" placeholder="Company Name" ref={register} />
                     <Input name="email" type="email" placeholder="Email" ref={register} />
@@ -61,7 +61,7 @@ const ContactForm = () => {
                     <ButtonPrimary disabled={isSubmitting} type="submit">
                         Send Message
                     </ButtonPrimary>
-                </FlexRow>
+                </Flex>
             </form>
         </FormContainer>
     );

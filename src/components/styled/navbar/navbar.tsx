@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSpring, animated, config } from 'react-spring';
-import { media } from '../../../utils/mediaQueries';
+import { media } from '../../../utils/mediaQueries.ts';
 
 import Brand from './brand';
 import BurgerMenu from './burgerMenu';
@@ -98,7 +98,7 @@ const NavLinksUl = styled(animated.ul)`
 const BurgerWrapper = styled.div`
     margin: auto 0;
 
-    ${media.custom(769)} {
+    ${media.custom('min', 769)} {
         display: none;
     }
 `;

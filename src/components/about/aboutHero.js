@@ -3,22 +3,25 @@ import { Waypoint } from 'react-waypoint';
 import { useSpring, animated as a, config } from 'react-spring';
 import { Flex, FlexItem } from '../styled/flexBox.ts';
 import { AnimatedH1, AnimatedP } from '../styled/type.tsx';
-import { ButtonPrimary } from '../styled/button.tsx';
+import { ButtonPrimary, ButtonText } from '../styled/button.tsx';
+import { useViewport } from '../../context/viewport';
 import AnimatedImage from '../animateImage';
-import animatedJson from '../../images/animated/techno-male-animated.json';
+import animatedJson from '../../images/animated/home-office-animated-illustration.json';
 
 const AboutHero = () => {
+    const { width } = useViewport();
     const [on, toggle] = useState(false);
     const animation = useSpring({
         opacity: on ? 1 : 0,
         transform: on ? 'translate3d(0,0,0)' : 'translate3d(-50%,0,0)',
         config: config.molasses,
     });
+    const breakpoint = 922;
     return (
         <div className="about-page-heading">
             <div className="container">
-                <Flex>
-                    <FlexItem alignCenter flex={1}>
+                <Flex columnMobile>
+                    <FlexItem alignCenter textLeft={width > breakpoint} flex={1}>
                         <Waypoint
                             onEnter={() => {
                                 if (!on) toggle(true);
@@ -33,7 +36,9 @@ const AboutHero = () => {
                             to meet them there.
                         </AnimatedP>
                         <a.div style={animation}>
-                            <ButtonPrimary>request a quote</ButtonPrimary>
+                            <ButtonPrimary>
+                                <ButtonText fontWeight="bold">Request a quote</ButtonText>
+                            </ButtonPrimary>
                         </a.div>
                     </FlexItem>
                     <FlexItem flex={1}>

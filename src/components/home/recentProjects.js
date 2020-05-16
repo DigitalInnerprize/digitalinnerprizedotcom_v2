@@ -3,7 +3,7 @@ import { Waypoint } from 'react-waypoint';
 import { useSpring, animated as a, config } from 'react-spring';
 import { Link } from 'gatsby';
 import { AnimatedH2, AnimatedP } from '../styled/type.tsx';
-import { ButtonPrimary } from '../styled/button.tsx';
+import { ButtonPrimary, ButtonText } from '../styled/button.tsx';
 
 const RecentProjects = () => {
     const [on, toggle] = useState(false);
@@ -32,7 +32,9 @@ const RecentProjects = () => {
                         </AnimatedP>
                         <a.div style={animation}>
                             <Link to="/work">
-                                <ButtonPrimary>See our work</ButtonPrimary>
+                                <ButtonPrimary>
+                                    <ButtonText fontWeight="bold">See our work</ButtonText>
+                                </ButtonPrimary>
                             </Link>
                         </a.div>
                     </div>

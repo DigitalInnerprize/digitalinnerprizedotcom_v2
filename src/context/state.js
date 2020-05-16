@@ -1,6 +1,6 @@
 import React from 'react';
-import { ModalProvider } from './modal';
 import { ProjectsProvider } from './projects';
+import { ViewportProvider } from './viewport.tsx';
 
 function ProviderComposer({ contexts, children }) {
     return contexts.reduceRight(
@@ -13,7 +13,7 @@ function ProviderComposer({ contexts, children }) {
 }
 
 function ContextProvider({ children }) {
-    return <ProviderComposer contexts={[<ModalProvider />, <ProjectsProvider />]}>{children}</ProviderComposer>;
+    return <ProviderComposer contexts={[<ViewportProvider />, <ProjectsProvider />]}>{children}</ProviderComposer>;
 }
 
 export { ContextProvider };

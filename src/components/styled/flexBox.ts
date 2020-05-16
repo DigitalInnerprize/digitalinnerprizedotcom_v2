@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 import is from 'typescript-styled-is';
+import { media } from '../../utils/mediaQueries.ts';
 
-type FlexProps = {
+type SharedProps = {
+    textCenter?: boolean;
+    textRight?: boolean;
+    textLeft?: boolean;
+};
+
+type FlexProps = SharedProps & {
     inline?: boolean;
     row?: boolean;
     rowReverse?: boolean;
@@ -28,9 +35,11 @@ type FlexProps = {
     alignStretch?: boolean;
     full?: boolean;
     center?: boolean;
+    marginAuto?: boolean;
+    columnMobile?: boolean;
 };
 
-type FlexItemProps = {
+type FlexItemProps = SharedProps & {
     inlineBlock?: boolean;
     inlineFlex?: boolean;
     displayFlex?: boolean;
@@ -69,6 +78,11 @@ type FlexItemProps = {
  * @param alignBaseline Boolean - align-items
  * @param alignStretch Boolean - align-items
  * @param full Boolean - Width 100%, Height 100%, FlexBasis 100%
+ * @param columnMobile Boolean - *media query* - flex-direction: column;
+ * @param textCenter Boolean - text-align: center
+ * @param textRight Boolean - text-align: right
+ * @param textLeft Boolean - text-align: left
+ * @param marginAuto Boolean
  * @param center
  * @returns Flex component
  */
@@ -162,6 +176,17 @@ export const Flex = styled.div<FlexProps>`
     ${is('alignStretch')`
     align-items: stretch;
   `};
+  /******************************* type *******************************/
+    /*************** http://cssreference.io/property/align-items ***************/
+    ${is('textCenter')`
+      text-align: center;
+    `}
+    ${is('textLeft')`
+      text-align: center;
+    `}
+    ${is('textRight')`
+      text-align: center;
+    `}
     /******************************** utilities ********************************/
     ${is('full')`
     width: 100%;
@@ -171,6 +196,17 @@ export const Flex = styled.div<FlexProps>`
     ${is('center')`
     align-items: center;
     justify-content: center;
+  `};
+
+  ${is('marginAuto')`
+    margin-left: auto;
+    margin-right: auto;
+  `};
+
+    ${is('columnMobile')`
+    ${media.custom('max', 922)} {
+      flex-direction: column;
+    }
   `};
 `;
 
@@ -188,6 +224,9 @@ export const Flex = styled.div<FlexProps>`
  * @param grow Number - flex-shrink: Number;
  * @param shrink Number - flex-shrink: Number;
  * @param noShrink Boolean - flex-shrink: 0;
+ * @param textCenter Boolean - text-align: center
+ * @param textRight Boolean - text-align: right
+ * @param textLeft Boolean - text-align: left
  * @returns FlexItem component
  */
 export const FlexItem = styled.div<FlexItemProps>`
@@ -196,7 +235,8 @@ export const FlexItem = styled.div<FlexItemProps>`
     flex-grow: 0;
     flex-shrink: 1;
     display: block;
-    flex: ${props => props.flex && props.flex}
+    flex: ${props => props.flex && props.flex};
+    text-align: center
 
     ${is('inlineBlock')`
     display: inline-block;
@@ -251,4 +291,18 @@ export const FlexItem = styled.div<FlexItemProps>`
     ${is('noShrink')`
     flex-shrink: 0;
   `};
+
+  /******************************* type *******************************/
+    /*************** http://cssreference.io/property/align-items ***************/
+    ${is('textCenter')`
+      text-align: center;
+    `}
+
+    ${is('textLeft')`
+      text-align: left;
+    `}
+
+    ${is('textRight')`
+      text-align: right;
+    `}
 `;

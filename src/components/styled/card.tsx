@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { H2 } from './type';
+import { H2, NavClickLink } from './type.tsx';
+import { Flex } from './flexBox.ts';
 
 const CardContainer = styled.article`
     backface-visibility: hidden;
@@ -44,14 +45,11 @@ const Description = styled.div`
     display: flex;
     flex-direction: column;
     -webkit-box-pack: end;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     position: relative;
     z-index: 1;
-`;
-
-const Link = styled.a`
-    color: rgba(255, 255, 255, 0.8);
 `;
 
 type Props = {
@@ -71,19 +69,29 @@ export const Card: React.FC<Props> = (props: Props) => {
                 <>
                     <Overlay />
                     <Description>
-                        <H2>{props.name}</H2>
-                        <Link href={props.url} target="_blank" className="project-link" rel="noopener noreferrer">
+                        <H2 color="white" marginBottom="xs">
+                            {props.name}
+                        </H2>
+                        <NavClickLink
+                            href={props.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            capitalize
+                            size="md"
+                            marginBottom="sm"
+                        >
                             Visit Site
-                        </Link>
+                        </NavClickLink>
                         {props.mobile && (
-                            <Link
+                            <NavClickLink
                                 href={props.appLink}
                                 target="_blank"
-                                className="project-link"
                                 rel="noopener noreferrer"
+                                capitalize
+                                size="md"
                             >
                                 Download Mobile App
-                            </Link>
+                            </NavClickLink>
                         )}
                     </Description>
                 </>
