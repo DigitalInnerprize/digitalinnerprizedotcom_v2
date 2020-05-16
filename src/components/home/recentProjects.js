@@ -13,7 +13,6 @@ const RecentProjects = () => {
         transform: on ? 'translate3d(0,0,0)' : 'translate3d(-50%,0,0)',
         config: config.molasses,
     });
-    const breakpoint = useMediaQuery('(max-width: 921px)');
 
     return (
         <section className="home-recent-projects">

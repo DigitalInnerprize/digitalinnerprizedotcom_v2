@@ -25,6 +25,7 @@ const Div = styled(a.div)`
 const HomeHero = () => {
     const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
     const breakpoint = useMediaQuery('(min-width: 921px)');
+    console.log('breakpoint =', breakpoint);
 
     return (
         <section className="home-hero">
