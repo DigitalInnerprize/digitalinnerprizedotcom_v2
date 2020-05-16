@@ -83,34 +83,11 @@
   }
 
   .right {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     @include padding__left-right(8px);
-
-    @include breakpoint-custom($screen-xs-max) {
-      flex-direction: row;
-    }
-
-    .project-column {
-      padding: 0;
-
-      @include breakpoint-custom($screen-xs-max) {
-        @include padding__left-right(12px);
-      }
-    }
-
-    .column-left {
-      @include breakpoint-custom($screen-xs-max) {
-        .box:first-of-type {
-          @include margin__top-bottom(0px, 65px);
-        }
-      }
-    }
-
-    .column-right {
-      align-self: center;
-    }
   }
 }
 
@@ -143,7 +120,6 @@
 }
 
 .box {
-  background-color: red;
   @include margin__top-bottom(15px);
 
   @include breakpoint-custom($screen-xs-max) {

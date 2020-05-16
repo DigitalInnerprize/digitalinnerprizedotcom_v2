@@ -2,8 +2,9 @@ import React from 'react';
 import Lottie from 'react-lottie';
 import PropTypes from 'prop-types';
 
-const AnimatedImage = ({ animatedJson, height }) => (
+const AnimatedImage = ({ animatedJson, height }, props) => (
     <Lottie
+        {...props}
         options={{
             loop: true,
             autoplay: true,
