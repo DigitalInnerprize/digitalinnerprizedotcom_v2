@@ -28,6 +28,8 @@ type HeadingProps = SharedProps & {
 type PtagProps = SharedProps & {
     paddingTop?: string;
     paddingBottom?: string;
+    paddingLeft?: string;
+    paddingRight?: string;
     centered?: boolean;
     bold?: boolean;
     borderLeft?: boolean;
@@ -236,7 +238,9 @@ export const P = styled.p<PtagProps>`
         props.marginBottom ? props.theme.spacing.vertical[props.marginBottom] : props.theme.spacing.vertical.lg};
     padding-top: ${props => props.paddingTop && props.theme.spacing.vertical[props.paddingTop]};
     padding-bottom: ${props => props.paddingBottom && props.theme.spacing.vertical[props.paddingBottom]};
-    padding-left: ${props => props.borderLeft && '10px'};
+    padding-left: ${props =>
+        props.paddingLeft ? props.theme.spacing.horizontal[props.paddingLeft] : props.borderLeft ? '10px' : 0};
+    padding-right: ${props => (props.paddingRight ? props.theme.spacing.horizontal[props.paddingRight] : 0)};
     margin-left: ${props => props.centered && 'auto'};
     margin-right: ${props => props.centered && 'auto'};
     color: ${props => props.color && props.theme.colors[props.color]};
@@ -271,6 +275,9 @@ export const AnimatedP = styled(animated.p)<PtagProps>`
         props.marginTop ? props.theme.spacing.vertical[props.marginTop] : props.theme.spacing.vertical.md};
     margin-bottom: ${props =>
         props.marginBottom ? props.theme.spacing.vertical[props.marginBottom] : props.theme.spacing.vertical.lg};
+    padding-left: ${props =>
+        props.paddingLeft ? props.theme.spacing.horizontal[props.paddingLeft] : props.borderLeft ? '10px' : 0};
+    padding-right: ${props => (props.paddingRight ? props.theme.spacing.horizontal[props.paddingRight] : 0)};
     color: ${props => props.color && props.theme.colors[props.color]};
     ${props =>
         fontSizer(

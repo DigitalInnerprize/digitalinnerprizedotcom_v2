@@ -60,6 +60,7 @@ const theme = {
             sm: '.6em',
             md: '1.2em',
             lg: '1.8em',
+            lg2: '2.8em',
             xl: '4.6em',
             xlAlt: '6.2em',
             xxl: '8em',

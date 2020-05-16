@@ -4,6 +4,7 @@ import { useSpring, animated as a, config } from 'react-spring';
 import { Link } from 'gatsby';
 import { AnimatedH2, AnimatedP } from '../styled/type.tsx';
 import { ButtonPrimary, ButtonText } from '../styled/button.tsx';
+import { useMediaQuery } from '../../hooks/useMediaQuery.ts';
 
 const RecentProjects = () => {
     const [on, toggle] = useState(false);
@@ -12,6 +13,8 @@ const RecentProjects = () => {
         transform: on ? 'translate3d(0,0,0)' : 'translate3d(-50%,0,0)',
         config: config.molasses,
     });
+    const breakpoint = useMediaQuery('(min-width: 921px)');
+
     return (
         <section className="home-recent-projects">
             <div className="container">
@@ -26,7 +29,13 @@ const RecentProjects = () => {
                         <AnimatedH2 style={animation} size="h2" marginBottom="0" capitalize fontWeight={700}>
                             recent projects
                         </AnimatedH2>
-                        <AnimatedP style={animation} marginTop="md" color="gray2">
+                        <AnimatedP
+                            style={animation}
+                            marginTop="md"
+                            color="gray2"
+                            paddingLeft={breakpoint ? 'md' : 'lg2'}
+                            paddingRight={breakpoint ? 'md' : 'lg2'}
+                        >
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae voluptate totam, fugit illo
                             eos ratione suscipit aperiam eligendi expedita, illum quia. Odit dolorem sequi rerum p
                         </AnimatedP>

@@ -4,24 +4,30 @@ import { useSpring, animated as a, config } from 'react-spring';
 import { Flex, FlexItem } from '../styled/flexBox.ts';
 import { AnimatedH1, AnimatedP } from '../styled/type.tsx';
 import { ButtonPrimary, ButtonText } from '../styled/button.tsx';
-import { useViewport } from '../../context/viewport';
+import { useMediaQuery } from '../../hooks/useMediaQuery.ts';
 import AnimatedImage from '../animateImage';
 import animatedJson from '../../images/animated/home-office-animated-illustration.json';
 
 const AboutHero = () => {
-    const { width } = useViewport();
     const [on, toggle] = useState(false);
     const animation = useSpring({
         opacity: on ? 1 : 0,
         transform: on ? 'translate3d(0,0,0)' : 'translate3d(-50%,0,0)',
         config: config.molasses,
     });
-    const breakpoint = 922;
+    const breakpoint = useMediaQuery('(min-width: 921px)');
+
     return (
         <div className="about-page-heading">
             <div className="container">
                 <Flex columnMobile>
-                    <FlexItem alignCenter textLeft={width > breakpoint} flex={1}>
+                    <FlexItem
+                        alignCenter
+                        textLeft={breakpoint}
+                        flex={1}
+                        paddingLeft={breakpoint ? 'md' : 'lg2'}
+                        paddingRight={breakpoint ? 'md' : 'lg2'}
+                    >
                         <Waypoint
                             onEnter={() => {
                                 if (!on) toggle(true);

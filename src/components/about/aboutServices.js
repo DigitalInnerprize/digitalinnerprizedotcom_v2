@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { Waypoint } from 'react-waypoint';
 import { useTrail, animated as a, config } from 'react-spring';
 import { H2, H3, P } from '../styled/type.tsx';
+import { useMediaQuery } from '../../hooks/useMediaQuery.ts';
 import Svg from '../Svg';
 import Desktop from '../../images/svg/desktop.svg';
 import Mobile from '../../images/svg/mobile.svg';
@@ -52,6 +53,7 @@ const HomeServices = () => {
         transform: on ? 'scale(1)' : 'scale(0.3)',
         config: config.gentle,
     });
+    const breakpoint = useMediaQuery('(max-width: 921px)');
 
     return (
         <section className="about-page-services">
@@ -77,7 +79,12 @@ const HomeServices = () => {
                                                 <H3 size="h3" capitalize fontWeight={600} marginBottom="0">
                                                     {title}
                                                 </H3>
-                                                <P marginTop="0" color="gray2">
+                                                <P
+                                                    marginTop={breakpoint ? 'md' : '0'}
+                                                    color="gray2"
+                                                    paddingLeft={breakpoint && 'xxl'}
+                                                    paddingRight={breakpoint && 'xxl'}
+                                                >
                                                     {paragraph}
                                                 </P>
                                             </div>

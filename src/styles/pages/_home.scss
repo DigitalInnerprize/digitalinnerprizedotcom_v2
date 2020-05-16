@@ -68,8 +68,10 @@
     align-self: center;
     text-align: center;
 
+
     @include breakpoint-custom($screen-xs-max) {
       text-align: left;
+      padding-left: 20px;
     }
 
     .sub-title {

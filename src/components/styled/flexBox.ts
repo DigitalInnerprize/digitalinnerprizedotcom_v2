@@ -49,6 +49,8 @@ type FlexItemProps = SharedProps & {
     grow?: number | string;
     shrink?: number | string;
     noShrink?: boolean;
+    paddingLeft?: string;
+    paddingRight?: string;
 };
 
 /**
@@ -236,7 +238,9 @@ export const FlexItem = styled.div<FlexItemProps>`
     flex-shrink: 1;
     display: block;
     flex: ${props => props.flex && props.flex};
-    text-align: center
+    text-align: center;
+    padding-left: ${props => props.paddingLeft && props.theme.spacing.horizontal[props.paddingLeft]};
+    padding-right: ${props => props.paddingRight && props.theme.spacing.horizontal[props.paddingRight]};
 
     ${is('inlineBlock')`
     display: inline-block;

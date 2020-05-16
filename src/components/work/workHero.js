@@ -5,23 +5,29 @@ import { Flex, FlexItem } from '../styled/flexBox.ts';
 import { AnimatedH1, AnimatedP } from '../styled/type.tsx';
 import animatedJson from '../../images/animated/editing-animated-illustration.json';
 import AnimatedImage from '../animateImage';
-import { useViewport } from '../../context/viewport.tsx';
+import { useMediaQuery } from '../../hooks/useMediaQuery.ts';
 import { ButtonPrimary, ButtonText } from '../styled/button.tsx';
 
 const WorkHero = () => {
-    const { width } = useViewport();
     const [on, toggle] = useState(false);
     const animation = useSpring({
         opacity: on ? 1 : 0,
         transform: on ? 'translate3d(0,0,0)' : 'translate3d(-50%,0,0)',
         config: config.molasses,
     });
-    const breakpoint = 922;
+    const breakpoint = useMediaQuery('(min-width: 921px)');
+
     return (
         <div className="work-page-heading">
             <div className="container">
                 <Flex columnMobile>
-                    <FlexItem alignCenter textLeft={width > breakpoint} flex={1}>
+                    <FlexItem
+                        alignCenter
+                        textLeft={breakpoint}
+                        flex={1}
+                        paddingLeft={breakpoint ? 'md' : 'lg2'}
+                        paddingRight={breakpoint ? 'md' : 'lg2'}
+                    >
                         <Waypoint
                             onEnter={() => {
                                 if (!on) toggle(true);
