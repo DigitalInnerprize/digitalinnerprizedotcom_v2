@@ -50,8 +50,8 @@ const WorkHero = () => {
                         <AnimatedImage
                             animatedJson={animatedJson}
                             altText="about page image"
-                            height={500}
-                            width={500}
+                            width={breakpoint.tablet && 500}
+                            height={breakpoint.tablet ? 525 : 500}
                         />
                     </FlexItem>
                 </Flex>

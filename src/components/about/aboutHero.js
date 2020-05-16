@@ -51,8 +51,8 @@ const AboutHero = () => {
                         <AnimatedImage
                             animatedJson={animatedJson}
                             altText="about page image"
-                            height={550}
-                            width={500}
+                            width={breakpoint.tablet && 500}
+                            height={breakpoint.tablet ? 550 : 500}
                         />
                     </FlexItem>
                 </Flex>

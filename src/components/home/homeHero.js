@@ -53,7 +53,11 @@ const HomeHero = () => {
                     </FlexItem>
                     <FlexItem>
                         <div>
-                            <AnimatedImage animatedJson={animatedJson} width={800} height={675} />
+                            <AnimatedImage
+                                animatedJson={animatedJson}
+                                width={breakpoint.tablet && 800}
+                                height={breakpoint.tablet ? 675 : 525}
+                            />
                         </div>
                     </FlexItem>
                 </Flex>
