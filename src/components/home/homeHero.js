@@ -33,8 +33,8 @@ const HomeHero = () => {
                     <FlexItem
                         alignCenter
                         textLeft={breakpoint.tablet}
-                        paddingLeft={breakpoint.mobile ? 'lg2' : 'md'}
-                        paddingRight={breakpoint.mobile ? 'lg2' : 'md'}
+                        paddingLeft={breakpoint.mobile ? 'lg' : 'md'}
+                        paddingRight={breakpoint.mobile ? 'lg' : 'md'}
                     >
                         <Div style={fade}>
                             <H1 marginBottom="0" capitalize fontWeight={700}>

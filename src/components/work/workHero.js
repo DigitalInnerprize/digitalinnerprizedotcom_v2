@@ -25,8 +25,8 @@ const WorkHero = () => {
                         alignCenter
                         textLeft={breakpoint.tablet}
                         flex={1}
-                        paddingLeft={breakpoint.mobile ? 'lg2' : 'md'}
-                        paddingRight={breakpoint ? 'lg2' : 'md'}
+                        paddingLeft={breakpoint.mobile ? 'lg' : 'md'}
+                        paddingRight={breakpoint.mobile ? 'lg' : 'md'}
                     >
                         <Waypoint
                             onEnter={() => {

@@ -25,8 +25,8 @@ const AboutHero = () => {
                         alignCenter
                         textLeft={breakpoint.tablet}
                         flex={1}
-                        paddingLeft={breakpoint.mobile ? 'lg2' : 'md'}
-                        paddingRight={breakpoint.mobile ? 'lg2' : 'md'}
+                        paddingLeft={breakpoint.mobile ? 'lg' : 'md'}
+                        paddingRight={breakpoint.mobile ? 'lg' : 'md'}
                     >
                         <Waypoint
                             onEnter={() => {
