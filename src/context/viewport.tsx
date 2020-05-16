@@ -1,6 +1,12 @@
 import * as React from 'react';
+import { window } from 'browser-monads';
 
-const viewportContext = React.createContext<{}>({});
+type UseViewProps = {
+    width: number | null;
+    height: number | null;
+};
+
+const viewportContext = React.createContext({} as UseViewProps);
 
 export const ViewportProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     // This is the exact same logic that we previously had in our hook
@@ -27,10 +33,6 @@ export const ViewportProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 /* Rewrite the "useViewport" hook to pull the width and height values
    out of the context instead of calculating them itself */
 
-type UseViewProps = {
-    width: number | null;
-    height: number | null;
-};
 export const useViewport = () => {
     /* We can use the "useContext" Hook to acccess a context from within
      another Hook, remember, Hooks are composable! */
