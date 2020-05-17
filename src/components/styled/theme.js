@@ -128,7 +128,7 @@ const theme = {
             },
         },
         size: {
-            h1: 50,
+            h1: 45,
             h1Alt: 36, // home header
             h2: 28,
             h3: 18,

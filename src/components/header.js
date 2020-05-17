@@ -36,8 +36,8 @@ const Header = () => {
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink fontWeight="semi-bold" size="h3" to="/about">
-                                        about
+                                    <NavLink fontWeight="semi-bold" size="h3" to="/what-we-do">
+                                        what we do
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
@@ -64,9 +64,9 @@ const Header = () => {
                                             Home
                                         </MenuItem>
                                     </Link>
-                                    <Link to="/about">
+                                    <Link to="/what-we-do">
                                         <MenuItem delay={`${0.1}s`} open={menuOpen} onClick={() => setMenuOpen(false)}>
-                                            About
+                                            What We Do
                                         </MenuItem>
                                     </Link>
                                     <Link to="/work">

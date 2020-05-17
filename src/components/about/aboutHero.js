@@ -34,7 +34,7 @@ const AboutHero = () => {
                             }}
                         />
                         <AnimatedH1 style={animation} size="h1" marginBottom="0" capitalize fontWeight={700}>
-                            Hi from Digital Innerprize
+                            web & mobile app development.
                         </AnimatedH1>
                         <AnimatedP style={animation} marginTop="md" color="gray2">
                             We think smart businesses and entrepreneurs must fully embrace modern ways of reaching their

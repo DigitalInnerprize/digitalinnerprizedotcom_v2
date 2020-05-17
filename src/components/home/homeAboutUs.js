@@ -34,7 +34,7 @@ const HomeAboutUs = () => {
                         paddingRight={breakpoint.mobile ? 'lg2' : 'md'}
                     >
                         <AnimatedH2 style={animation} size="h2" marginBottom="0" capitalize fontWeight={700}>
-                            about us
+                            what we do
                         </AnimatedH2>
                         <AnimatedP style={animation} marginTop="md" color="gray2">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, numquam fuga
