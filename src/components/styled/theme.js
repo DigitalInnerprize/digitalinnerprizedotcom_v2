@@ -28,6 +28,8 @@ const theme = {
         whiteAlt: '#f9f9f9',
         black: '#222222',
         lightBlue: '#5fcff8',
+        maroon: '#d8357b',
+        yellow: '#f4d330',
         special: {
             blueDepthDot1: '#264d9d',
             blueDepthDot2: '#173870',

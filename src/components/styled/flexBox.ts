@@ -9,6 +9,8 @@ type SharedProps = {
 };
 
 type FlexProps = SharedProps & {
+    marginTop?: string;
+    marginBottom?: string;
     inline?: boolean;
     row?: boolean;
     rowReverse?: boolean;
@@ -96,6 +98,8 @@ export const Flex = styled.div<FlexProps>`
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-content: stretch;
+    margin-top: ${props => props.marginTop && props.theme.spacing.vertical[props.marginTop]};
+    margin-bottom: ${props => props.marginBottom && props.theme.spacing.vertical[props.marginBottom]};
     /********************************* display *********************************/
     /***************** http://cssreference.io/property/display *****************/
     ${is('inline')`

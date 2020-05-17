@@ -19,7 +19,7 @@ const HomeAboutUs = () => {
     return (
         <section className="home-about">
             <div className="container">
-                <Flex columnMobile>
+                <Flex columnMobile marginTop="lg">
                     <Waypoint
                         bottomOffset="15%"
                         onEnter={() => {

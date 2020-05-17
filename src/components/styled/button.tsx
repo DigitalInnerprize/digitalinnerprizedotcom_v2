@@ -162,7 +162,7 @@ export const ButtonPrimary = (props: ButtonProps) => (
             color: 'white',
             background: 'lightBlue',
         }}
-        hover={{ color: 'white', background: 'primary' }}
+        hover={{ color: 'white', background: 'maroon' }}
         regularcase={1}
         borderRadius={4}
     >
@@ -177,7 +177,7 @@ export const ButtonSecondary = (props: ButtonProps) => (
             color: 'white',
             background: 'lightBlue',
         }}
-        hover={{ color: 'white', background: 'primary' }}
+        hover={{ color: 'white', background: 'yellow' }}
         regularcase={1}
         borderRadius={4}
     >

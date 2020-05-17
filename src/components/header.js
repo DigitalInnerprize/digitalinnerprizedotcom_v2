@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import { NavLink } from './styled/type';
 import { MenuItem, Menu, MenuButton } from './hamburgerMenu';
 import React, { useEffect, useRef, useState } from 'react';
+import { useBreakpoint } from '../context/breakpoint.tsx';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -11,6 +12,7 @@ const Header = () => {
         const fixed = ref.current && ref.current.offsetTop;
         setFixed(window.pageYOffset > fixed);
     };
+    const breakpoint = useBreakpoint();
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -25,10 +27,8 @@ const Header = () => {
             <div className={isFixed ? 'fixed-nav' : 'navigation'} ref={ref}>
                 <div className="container">
                     <div className="nav-container">
-                        <NavLink size="h3" to="/">
-                            <div className="logo-container">
-                                <img src="../digital_innerprize_logo.png" alt="digital-innerprize-logo" />
-                            </div>
+                        <NavLink marginAuto={breakpoint.mobile} fontWeight="bold" size="h3" to="/">
+                            Digital InnerPrize
                         </NavLink>
                         <div className="nav-right">
                             <ul className="nav-list">
