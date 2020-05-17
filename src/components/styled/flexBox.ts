@@ -51,6 +51,8 @@ type FlexItemProps = SharedProps & {
     noShrink?: boolean;
     paddingLeft?: string;
     paddingRight?: string;
+    marginTop?: string;
+    marginBottom?: string;
 };
 
 /**
@@ -239,6 +241,8 @@ export const FlexItem = styled.div<FlexItemProps>`
     display: block;
     flex: ${props => props.flex && props.flex};
     text-align: center;
+    margin-top: ${props => props.marginTop && props.theme.spacing.vertical[props.marginTop]};
+    margin-bottom: ${props => props.marginBottom && props.theme.spacing.vertical[props.marginBottom]};
     padding-left: ${props => props.paddingLeft && props.theme.spacing.horizontal[props.paddingLeft]};
     padding-right: ${props => props.paddingRight && props.theme.spacing.horizontal[props.paddingRight]};
 

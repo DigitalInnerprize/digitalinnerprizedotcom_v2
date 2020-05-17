@@ -80,7 +80,7 @@ const HomeServices = () => {
                                                     {title}
                                                 </H3>
                                                 <P
-                                                    marginTop={breakpoint.mobile ? 'md' : '0'}
+                                                    marginTop={breakpoint.mobile ? 'sm' : '0'}
                                                     color="gray2"
                                                     paddingLeft={breakpoint.mobile && 'xxl'}
                                                     paddingRight={breakpoint.mobile && 'xxl'}

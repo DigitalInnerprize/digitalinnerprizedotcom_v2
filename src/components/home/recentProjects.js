@@ -3,6 +3,7 @@ import { Waypoint } from 'react-waypoint';
 import { useSpring, animated as a, config } from 'react-spring';
 import { Link } from 'gatsby';
 import { Flex, FlexItem } from '../styled/flexBox.ts';
+import { Grid, GridItem } from '../styled/grid.ts';
 import { AnimatedH2, AnimatedP } from '../styled/type.tsx';
 import { ButtonPrimary, ButtonText } from '../styled/button.tsx';
 import { useBreakpoint } from '../../context/breakpoint.tsx';
@@ -20,7 +21,13 @@ const RecentProjects = () => {
         <section className="home-recent-projects">
             <div className="container">
                 <Flex columnMobile>
-                    <FlexItem alignCenter textLeft={breakpoint.tablet}>
+                    <FlexItem
+                        flex={1}
+                        alignCenter
+                        textLeft={breakpoint.desktop}
+                        paddingLeft={breakpoint.mobile ? 'lg' : 'md'}
+                        paddingRight={breakpoint.mobile ? 'lg' : 'md'}
+                    >
                         <Waypoint
                             bottomOffset="15%"
                             onEnter={() => {
@@ -42,16 +49,24 @@ const RecentProjects = () => {
                             </Link>
                         </a.div>
                     </FlexItem>
-                    <FlexItem>
-                        <div className="box">
-                            <img src="/ubisoft.png" alt="ubisoft" />
-                        </div>
-                        <div className="box">
-                            <img src="/endpointclosing.png" alt="endpoint closing" />
-                        </div>
-                        <div className="box">
-                            <img src="/makena.png" alt="developer coding" />
-                        </div>
+                    <FlexItem
+                        flex={1.5}
+                        paddingLeft={'md'}
+                        paddingRight={'md'}
+                        marginTop={breakpoint.maxTablet && 'lg'}
+                    >
+                        <Grid gap="20px" templateColumns="1fr" autoRows="minmax(100px, auto)">
+                            <GridItem>
+                                <div className="box">
+                                    <img src="/ubisoft.png" alt="ubisoft" />
+                                </div>
+                            </GridItem>
+                            <GridItem>
+                                <div className="box">
+                                    <img src="/makena.png" alt="developer coding" />
+                                </div>
+                            </GridItem>
+                        </Grid>
                     </FlexItem>
                 </Flex>
             </div>

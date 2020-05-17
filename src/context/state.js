@@ -15,6 +15,7 @@ function ProviderComposer({ contexts, children }) {
 
 const queries = {
     mobile: '(max-width: 767px)',
+    maxTablet: '(max-width: 990px)',
     tablet: '(min-width: 768px)',
     desktop: '(min-width: 991px)',
     portrait: '(orientation: portrait)',

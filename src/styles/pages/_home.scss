@@ -1,128 +1,60 @@
-.home-hero-image {
-  // margin: 0 auto;
-  // max-width: 750px;
-}
-
 .home-hero-content {
-  text-align: center;
-  @include padding__top-bottom(90px, 50px);
+    text-align: center;
+    @include padding__top-bottom(90px, 50px);
 
-  @include breakpoint-custom($screen-xs-max) {
-    @include padding__top-bottom(100px, 0px);
-    @include padding__left-right($left: 50px);
-  }
+    @include breakpoint-custom($screen-xs-max) {
+        @include padding__top-bottom(100px, 0px);
+        @include padding__left-right($left: 50px);
+    }
 
-  .home-hero-text {
-    @include font-sizer(18px);
-  }
+    .home-hero-text {
+        @include font-sizer(18px);
+    }
 }
 
 .home-services {
-  text-align: center;
-  @include padding__top-bottom(100px);
+    text-align: center;
+    @include padding__top-bottom(100px);
 
-  .services-list {
-    text-transform: capitalize;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    .services-list {
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
 
-    @include breakpoint-custom($screen-xs-max) {
-      flex-direction: row;
+        @include breakpoint-custom($screen-xs-max) {
+            flex-direction: row;
+        }
+
+        .service-link {
+            flex: 1;
+            @include margin__top-bottom(0px, 100px);
+            @include margin__left-right(25px);
+
+            .service-title {
+                @include font-sizer(18px);
+                @include margin__top-bottom(20px, 0px);
+            }
+        }
     }
-
-    .service-link {
-      flex: 1;
-      @include margin__top-bottom(0px, 100px);
-      @include margin__left-right(25px);
-
-      .service-title {
-        @include font-sizer(18px);
-        @include margin__top-bottom(20px, 0px);
-      }
-    }
-  }
 }
 
 .home-cta {
-  @include padding__top-bottom(0px, 100px);
+    @include padding__top-bottom(0px, 100px);
 
-  .btn-container {
-    text-align: center;
-    margin-top: 30px;
-  }
+    .btn-container {
+        text-align: center;
+        margin-top: 30px;
+    }
 }
 
 .recent-projects-content {
-  display: flex;
-  flex-direction: column;
-  @include margin__top-bottom(0px, 60px);
-
-  @include breakpoint-custom($screen-xs-max) {
-    flex-direction: row;
-    @include margin__top-bottom(0px, 100px);
-  }
-
-  .left {
-    flex: 1;
-    align-self: center;
-    text-align: center;
-    padding-left: 2.8em;
-    padding-right: 2.8em;
-
+    display: flex;
+    flex-direction: column;
+    @include margin__top-bottom(0px, 60px);
 
     @include breakpoint-custom($screen-xs-max) {
-      text-align: left;
-      padding-left: 20px;
-      padding-right: 0;
+        flex-direction: row;
+        @include margin__top-bottom(0px, 100px);
     }
-
-    .sub-title {
-      text-transform: capitalize;
-    }
-  }
-
-  .right {
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    @include padding__left-right(8px);
-  }
-}
-
-.home-about-content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  @include margin__top-bottom(0px, 100px);
-
-  @include breakpoint-custom($screen-xs-max) {
-    flex-direction: row;
-  }
-
-  .home-about-text {
-    flex: 1;
-
-    @include breakpoint-custom($screen-xs-max) {
-      order: 1;
-    }
-
-    .sub-title {
-      text-transform: capitalize;
-    }
-  }
-
-  .home-about-image {
-    flex: 2;
-  }
-}
-
-.box {
-  @include margin__top-bottom(15px);
-
-  @include breakpoint-custom($screen-xs-max) {
-    margin: 0;
-  }
 }

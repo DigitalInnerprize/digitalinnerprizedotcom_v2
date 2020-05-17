@@ -231,7 +231,7 @@ export const H6 = (props: HeadingProps) => (
 
 // body
 export const P = styled.p<PtagProps>`
-    max-width: ${props => props.maxWidth && props.maxWidth}px;
+    max-width: ${props => props.maxWidth && props.maxWidth};
     margin-top: ${props =>
         props.marginTop ? props.theme.spacing.vertical[props.marginTop] : props.theme.spacing.vertical.md};
     margin-bottom: ${props =>

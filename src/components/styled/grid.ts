@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import is from 'typescript-styled-is';
+import { media } from '../../utils/mediaQueries';
 
 type GridProps = {
     templateColumns?: string;
