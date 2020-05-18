@@ -137,6 +137,7 @@ const theme = {
             h4: 14,
             h5: 9,
             h6: 7,
+            logo: 21,
             splashLogotype: 32,
             body: 14,
             bodyAlt: 15,

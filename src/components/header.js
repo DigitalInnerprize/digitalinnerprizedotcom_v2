@@ -27,7 +27,7 @@ const Header = () => {
             <div className={isFixed ? 'fixed-nav' : 'navigation'} ref={ref}>
                 <div className="container">
                     <div className="nav-container">
-                        <NavLink marginAuto={breakpoint.mobile} fontWeight="bold" size="h3" to="/">
+                        <NavLink marginAuto={breakpoint.mobile} fontWeight="bold" size="logo" to="/">
                             Digital InnerPrize
                         </NavLink>
                         <div className="nav-right">
