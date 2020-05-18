@@ -2,7 +2,7 @@ import React from 'react';
 import { withTheme } from 'styled-components';
 import { Flex } from './styled/flexBox.ts';
 import { FormContainer, Input } from './styled/form.ts';
-import { ButtonPrimary } from './styled/button.tsx';
+import { ButtonPrimary, ButtonText } from './styled/button.tsx';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
@@ -47,7 +47,7 @@ const ContactForm = () => {
     };
 
     return (
-        <FormContainer>
+        <FormContainer marginAuto>
             {errors.name && <p className="error-text">{errors.name.message}</p>}
             {errors.company && <p className="error-text">{errors.company.message}</p>}
             {errors.email && <p className="error-text">{errors.email.message}</p>}
@@ -59,7 +59,7 @@ const ContactForm = () => {
                     <Input name="email" type="email" placeholder="Email" ref={register} />
                     <Input name="phone" type="number" placeholder="Contact Number" ref={register} />
                     <ButtonPrimary disabled={isSubmitting} type="submit">
-                        Send Message
+                        <ButtonText fontWeight="bold">Send Message</ButtonText>
                     </ButtonPrimary>
                 </Flex>
             </form>

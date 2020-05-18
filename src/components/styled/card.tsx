@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { H2, NavClickLink } from './type.tsx';
-import { Flex } from './flexBox.ts';
 
 const CardContainer = styled.article`
     backface-visibility: hidden;

@@ -1,16 +1,18 @@
 import styled from 'styled-components';
+import is from 'typescript-styled-is';
 
 export const FormContainer = styled.div`
-    padding: 130px 15px 0;
-    margin: 0 auto;
-    max-width: 1170px;
-    height: 100vh;
+    margin-top: ${props => props.theme.spacing.vertical['xxl']};
+    padding-bottom: ${props => props.theme.spacing.vertical['xxl']};
+    padding-left: ${props => props.theme.spacing.horizontal['lg']};
+    padding-right: ${props => props.theme.spacing.horizontal['lg']};
+    max-width: 900px;
     text-align: center;
 
-    @media (min-width: ${props => props.theme.breakpoints.sm}px) {
-        padding: 100px 15px 0;
-        width: 1000px;
-    }
+    ${is('marginAuto')`
+        margin-left: auto;
+        margin-right: auto;
+    `};
 `;
 
 export const Input = styled.input.attrs(props => ({
