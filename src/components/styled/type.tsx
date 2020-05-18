@@ -33,6 +33,7 @@ type PtagProps = SharedProps & {
     centered?: boolean;
     bold?: boolean;
     borderLeft?: boolean;
+    dropCapSize?: string;
 };
 
 type TextProps = {
@@ -267,6 +268,14 @@ export const P = styled.p<PtagProps>`
 
     ${is('lowercase')`
       text-transform: capitalize;
+    `};
+
+    ${is('dropCapSize')`
+      &:first-letter {
+        font-size: ${props => props.dropCapSize && props.theme.type.size[props.dropCapSize]};
+        float: left;
+        margin-top: .15em;
+      }
     `};
 `;
 
