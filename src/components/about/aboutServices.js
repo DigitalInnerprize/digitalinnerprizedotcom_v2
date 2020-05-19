@@ -82,8 +82,8 @@ const HomeServices = () => {
                                                 <P
                                                     marginTop={breakpoint.mobile ? 'sm' : '0'}
                                                     color="gray2"
-                                                    paddingLeft={breakpoint.mobile && 'xxl'}
-                                                    paddingRight={breakpoint.mobile && 'xxl'}
+                                                    paddingLeft={breakpoint.mobile && 'xl'}
+                                                    paddingRight={breakpoint.mobile && 'xl'}
                                                 >
                                                     {paragraph}
                                                 </P>

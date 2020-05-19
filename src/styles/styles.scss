@@ -106,7 +106,7 @@ p {
     flex-direction: row;
     text-align: left;
   }
-  
+
   &.about-page,
   &.work-page {
     @include padding__left-right(30px);
@@ -117,33 +117,12 @@ p {
   }
 }
 
-.flex-1 {
-  flex: 1;
-
-  &.align-center {
-    align-self: center;
-  }
-}
-
-.flex-2 {
-  flex: 2;
-}
-
-.flex-3 {
-  flex: 3;
-}
-
 .error-text {
   margin: 0.25em 0 0.25em 0;
   padding: 0;
   color: red;
   font-weight: bold;
   font-size: 1rem;
-}
-
-.about-page-heading,
-.work-page-heading {
-  @include padding__top-bottom(90px);
 }
 
 @import './partials/header';
