@@ -22,7 +22,6 @@ img {
 
 html {
   box-sizing: border-box;
-  font-family: $fontFamily;
   font-size: 17px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -33,11 +32,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   color: $primaryFontColor;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 p {
@@ -61,59 +55,6 @@ p {
     max-width: 1170px;
     padding-left: 0;
     padding-right: 0;
-  }
-}
-
-.title {
-  font-weight: bold;
-  text-transform: capitalize;
-  @include font-sizer(34px);
-}
-
-.sub-title {
-  font-weight: bold;
-  @include font-sizer(28px);
-
-  &.left {
-    text-align: left;
-  }
-
-  &.center {
-    text-align: center;
-  }
-
-  &.right {
-    text-align: right;
-  }
-}
-
-.mini-title {
-  text-transform: capitalize;
-  @include font-sizer(22px);
-}
-
-/* shared page classes */
-.description-content {
-  @include margin__top-bottom(20px, 25px);
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-
-  @include breakpoint-custom($screen-xs-max) {
-    flex-direction: row;
-    text-align: left;
-  }
-
-  &.about-page,
-  &.work-page {
-    @include padding__left-right(30px);
-
-    @include breakpoint-custom($screen-xs-max) {
-      @include padding__left-right(50px, 0px);
-    }
   }
 }
 
