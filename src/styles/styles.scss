@@ -1,43 +1,6 @@
 @import './vars';
 @import './mixins/mixins';
 
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  vertical-align: baseline;
-  font-size: 100%;
-  box-sizing: inherit;
-
-  &::before,
-  &::after {
-    box-sizing: inherit;
-  }
-}
-
-img {
-  height: 100%;
-  width: 100%;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 17px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  color: $primaryFontColor;
-}
-
-p {
-  opacity: 0.7;
-}
-
 .mobile-nav {
   display: block;
 

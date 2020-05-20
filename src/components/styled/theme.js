@@ -30,13 +30,6 @@ const theme = {
         lightBlue: '#5fcff8',
         maroon: '#d8357b',
         yellow: '#f4d330',
-        special: {
-            blueDepthDot1: '#264d9d',
-            blueDepthDot2: '#173870',
-            blueFadeHr: '#6369a1',
-            blueGradient1: '#1e2e84',
-            blueGradient2: '#000837',
-        },
     },
     hardCodedSizes: {
         buttonHeight: 50,
@@ -98,8 +91,8 @@ const theme = {
     },
     type: {
         family: {
-            default: 'Open Sans',
-            heading: 'Open Sans',
+            default: 'Karla',
+            heading: 'Rubik',
         },
         letterSpacing: {
             narrow: '-0.03em',
