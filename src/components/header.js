@@ -27,7 +27,14 @@ const Header = () => {
             <div className={isFixed ? 'fixed-nav' : 'navigation'} ref={ref}>
                 <div className="container">
                     <div className="nav-container">
-                        <NavLink marginAuto={breakpoint.mobile} fontWeight="bold" size="logo" to="/">
+                        <NavLink
+                            marginTop={breakpoint.mobile && 'md'}
+                            marginBottom={breakpoint.mobile && 'md'}
+                            marginAuto={breakpoint.mobile}
+                            fontWeight="bold"
+                            size="logo"
+                            to="/"
+                        >
                             Digital InnerPrize
                         </NavLink>
                         <div className="nav-right">
@@ -61,26 +68,26 @@ const Header = () => {
                                     handleColor="#090C08"
                                 />
                                 <Menu handleOpen={menuOpen}>
-                                    <Link to="/">
+                                    <NavLink to="/">
                                         <MenuItem delay={`${0.1}s`} open={menuOpen} onClick={() => setMenuOpen(false)}>
                                             Home
                                         </MenuItem>
-                                    </Link>
-                                    <Link to="/what-we-do">
+                                    </NavLink>
+                                    <NavLink to="/what-we-do">
                                         <MenuItem delay={`${0.1}s`} open={menuOpen} onClick={() => setMenuOpen(false)}>
                                             What We Do
                                         </MenuItem>
-                                    </Link>
-                                    <Link to="/work">
+                                    </NavLink>
+                                    <NavLink to="/work">
                                         <MenuItem delay={`${0.1}s`} open={menuOpen} onClick={() => setMenuOpen(false)}>
                                             Work
                                         </MenuItem>
-                                    </Link>
-                                    <Link to="/contact">
+                                    </NavLink>
+                                    <NavLink to="/contact">
                                         <MenuItem delay={`${0.1}s`} open={menuOpen} onClick={() => setMenuOpen(false)}>
                                             Contact
                                         </MenuItem>
-                                    </Link>
+                                    </NavLink>
                                 </Menu>
                             </div>
                         </div>

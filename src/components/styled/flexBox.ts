@@ -144,6 +144,9 @@ export const Flex = styled.div<FlexProps>`
     ${is('justifyBetween')`
     justify-content: space-between;
   `};
+  ${is('justifyEvenly')`
+    justify-content: space-evenly;
+  `};
     ${is('justifyAround')`
     justify-content: space-around;
   `};

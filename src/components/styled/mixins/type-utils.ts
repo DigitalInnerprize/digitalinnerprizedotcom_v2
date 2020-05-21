@@ -1,9 +1,5 @@
 import { css } from 'styled-components';
 
-/*
- * type
- */
-
 type BProps = {
     body?: number;
     sm: number;

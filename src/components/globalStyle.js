@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { fontSizer } from './styled/mixins';
+import { fontSizer } from './styled/mixins/type-utils';
 import Rubik from '../fonts/Rubik/Rubik-Regular.ttf';
 import Karla from '../fonts/Karla/Karla-Regular.ttf';
 

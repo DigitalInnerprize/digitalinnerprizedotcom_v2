@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import is from 'typescript-styled-is';
 import { animated } from 'react-spring';
 import { Link } from 'gatsby';
-import { fontSizer } from './mixins';
+import { fontSizer } from './mixins/type-utils';
 
 type SharedProps = {
     marginTop?: string;

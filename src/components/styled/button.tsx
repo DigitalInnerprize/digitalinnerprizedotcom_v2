@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { fontSizer, transitionXs } from './mixins';
+import { fontSizer, transitionXs } from './mixins/type-utils';
 import is from 'typescript-styled-is';
 
 type ColorProps = {

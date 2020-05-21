@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { media } from '../utils/mediaQueries.ts';
+import { useBreakpoint } from '../context/breakpoint.tsx';
 import { Container } from './styled/container.ts';
+import { Flex, FlexItem } from './styled/flexBox.ts';
 import { UL, LI } from './styled/list.ts';
 import { H3, P, NavClickLink } from './styled/type.tsx';
 
@@ -11,53 +13,53 @@ const propTypes = {
 };
 
 const Wrapper = styled.footer`
-    padding-top: 60px;
-    background: #3434ff;
+    padding-top: 50px;
+    background: ${props => props.theme.colors['lightBlue']};
     color: #f8f8fb;
-    border-top: 2px solid #1f364d;
 
-    ${media.tablet} {
-        padding-top: 100px;
+    ${media.custom('min', 922)} {
+        padding-top: 85px;
     }
-`;
-
-const Content = styled.div`
-    padding-bottom: 50px;
-    display: flex;
-    justify-content: space-evenly;
 `;
 
 const Footer = () => {
     const d = new Date();
     const year = d.getFullYear();
+    const breakpoint = useBreakpoint();
 
     return (
         <Wrapper>
             <Container marginLeftAuto>
-                <Content>
-                    <div className="contact-info">
-                        <H3 uppercase>contact</H3>
-                        <P>Digitalinnerprize @gmail.com</P>
-                        <div className="copyright">
-                            <P>{year} &copy; Digital Innerprize Llc </P>
-                        </div>
-                    </div>
-                    <div className="socials">
-                        <H3 uppercase>follow us</H3>
-                        <UL column className="social-links">
-                            <LI>
+                <Flex columnMobile justifyEvenly>
+                    <FlexItem order={breakpoint.mobile && 1}>
+                        {breakpoint.tablet && (
+                            <H3 uppercase color="white">
+                                contact
+                            </H3>
+                        )}
+                        <P marginTop="0">Digitalinnerprize @gmail.com</P>
+                        <P marginTop="0">{year} &copy; Digital Innerprize Llc </P>
+                    </FlexItem>
+                    <FlexItem>
+                        {breakpoint.tablet && (
+                            <H3 uppercase color="white">
+                                follow us
+                            </H3>
+                        )}
+                        <UL column={breakpoint.tablet}>
+                            <LI marginRight="lg">
                                 <NavClickLink capitalize href="#">
                                     facebook
                                 </NavClickLink>
                             </LI>
-                            <LI>
+                            <LI marginLeft="lg">
                                 <NavClickLink capitalize href="#">
                                     instagram
                                 </NavClickLink>
                             </LI>
                         </UL>
-                    </div>
-                </Content>
+                    </FlexItem>
+                </Flex>
             </Container>
         </Wrapper>
     );
