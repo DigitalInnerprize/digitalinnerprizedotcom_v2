@@ -13,12 +13,14 @@ const propTypes = {
 };
 
 const Wrapper = styled.footer`
-    padding-top: 50px;
+    padding-top: 40px;
+    padding-bottom: 25px;
     background: ${props => props.theme.colors['lightBlue']};
     color: #f8f8fb;
 
     ${media.custom('min', 922)} {
-        padding-top: 85px;
+        padding-top: 65px;
+        padding-bottom: 50px;
     }
 `;
 
@@ -30,15 +32,17 @@ const Footer = () => {
     return (
         <Wrapper>
             <Container marginLeftAuto>
-                <Flex columnMobile justifyEvenly>
-                    <FlexItem order={breakpoint.maxTablet && 1}>
+                <Flex columnMobile={breakpoint.mobile} justifyEvenly alignCenter>
+                    <FlexItem order={breakpoint.mobile && 1}>
                         {breakpoint.tablet && (
                             <H3 uppercase color="white">
                                 contact
                             </H3>
                         )}
                         <P marginTop="0">Digitalinnerprize @gmail.com</P>
-                        <P marginTop="0">{year} &copy; Digital Innerprize Llc </P>
+                        <P marginTop="0" marginBottom={breakpoint.tablet && '0'}>
+                            {year} &copy; Digital Innerprize Llc{' '}
+                        </P>
                     </FlexItem>
                     <FlexItem>
                         {breakpoint.tablet && (
@@ -53,7 +57,7 @@ const Footer = () => {
                                 </NavClickLink>
                             </LI>
                             <LI marginLeft={breakpoint.mobile && 'lg'}>
-                                <NavClickLink capitalize href="#">
+                                <NavClickLink capitalize marginBottom={breakpoint.tablet && '0'} href="#">
                                     instagram
                                 </NavClickLink>
                             </LI>
