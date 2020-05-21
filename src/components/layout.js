@@ -8,6 +8,8 @@ import Footer from './footer';
 import theme from './styled/theme';
 import '../styles/styles.scss';
 
+//TODO: update WhatWeDo link to dropdown and add the multiple services for routes to hit on SEO
+
 const Layout = ({ children }) => {
     return (
         <ThemeProvider theme={theme}>

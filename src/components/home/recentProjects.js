@@ -38,9 +38,9 @@ const RecentProjects = () => {
                             recent projects
                         </AnimatedH2>
                         <AnimatedP style={animation} marginTop="md" color="gray2">
-                            As a Full-stack developer and a long life learner, I combine my creativity, coding skills,
-                            and passion for development to create eye candy solutions for web and mobile applications.
-                            Focusing on user experience I aim to develop interfaces that are accessible to all.
+                            As an agency of life long learners, We combine my creativity, coding skills, and passion for
+                            development to create eye candy solutions for web and mobile applications. Focusing on user
+                            experience we aim to develop interfaces that are accessible to all.
                         </AnimatedP>
                         <a.div style={animation}>
                             <Link to="/work">

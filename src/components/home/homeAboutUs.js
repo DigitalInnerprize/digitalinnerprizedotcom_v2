@@ -37,8 +37,8 @@ const HomeAboutUs = () => {
                             what we do
                         </AnimatedH2>
                         <AnimatedP style={animation} marginTop="md" color="gray2">
-                            My clients enjoy working with me as much as I enjoy solving the challenges they bring to me.
-                            I develop everything from small one-pager websites and simple mobile apps to business
+                            Our clients enjoy working with me as much as we enjoy solving the challenges they bring to
+                            me. We develop everything from small one-pager websites and simple mobile apps to business
                             websites, blogs, eCommerce stores, and more intricate projects.
                         </AnimatedP>
                     </FlexItem>
