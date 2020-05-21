@@ -193,10 +193,10 @@ export const Flex = styled.div<FlexProps>`
       text-align: center;
     `}
     ${is('textLeft')`
-      text-align: center;
+      text-align: left;
     `}
     ${is('textRight')`
-      text-align: center;
+      text-align: right;
     `}
     /******************************** utilities ********************************/
     ${is('full')`

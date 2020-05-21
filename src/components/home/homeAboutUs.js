@@ -27,8 +27,8 @@ const HomeAboutUs = () => {
                         }}
                     />
                     <FlexItem
-                        order={breakpoint.tablet && 1}
-                        textRight={breakpoint.tablet}
+                        order={breakpoint.desktop && 1}
+                        textRight={breakpoint.desktop}
                         alignCenter
                         paddingLeft={breakpoint.mobile ? 'lg2' : 'md'}
                         paddingRight={breakpoint.mobile ? 'lg2' : 'md'}

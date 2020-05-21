@@ -31,7 +31,7 @@ const Footer = () => {
         <Wrapper>
             <Container marginLeftAuto>
                 <Flex columnMobile justifyEvenly>
-                    <FlexItem order={breakpoint.mobile && 1}>
+                    <FlexItem order={breakpoint.maxTablet && 1}>
                         {breakpoint.tablet && (
                             <H3 uppercase color="white">
                                 contact
@@ -46,7 +46,7 @@ const Footer = () => {
                                 follow us
                             </H3>
                         )}
-                        <UL column={breakpoint.tablet}>
+                        <UL column={breakpoint.tablet} center>
                             <LI marginRight={breakpoint.mobile && 'lg'}>
                                 <NavClickLink capitalize href="#">
                                     facebook
