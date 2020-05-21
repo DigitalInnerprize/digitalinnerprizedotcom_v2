@@ -37,9 +37,9 @@ const HomeAboutUs = () => {
                             what we do
                         </AnimatedH2>
                         <AnimatedP style={animation} marginTop="md" color="gray2">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, numquam fuga
-                            distinctio minus quam id repellendus quos ea veritatis excepturi, eaque officia rerum ab
-                            quod labore laboriosam dignissimos illo quasi!
+                            My clients enjoy working with me as much as I enjoy solving the challenges they bring to me.
+                            I develop everything from small one-pager websites and simple mobile apps to business
+                            websites, blogs, eCommerce stores, and more intricate projects.
                         </AnimatedP>
                     </FlexItem>
                     <FlexItem>

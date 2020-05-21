@@ -37,7 +37,9 @@ const AboutHero = () => {
                             web & mobile app development.
                         </AnimatedH1>
                         <AnimatedP style={animation} marginTop="md" color="gray2">
-                            We think smart businesses and entrepreneurs must fully embrace modern ways of reaching their
+                            It is my core belief that your app or website should have personality and make your visitors
+                            react in a remarkable way. That is why I am offering you a wide array of services.We think
+                            smart businesses and entrepreneurs must fully embrace modern ways of reaching their
                             customers to succeed in today’s crowded marketplace your customers are online… and you need
                             to meet them there.
                         </AnimatedP>
