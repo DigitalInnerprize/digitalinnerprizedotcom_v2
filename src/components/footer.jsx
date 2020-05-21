@@ -47,12 +47,12 @@ const Footer = () => {
                             </H3>
                         )}
                         <UL column={breakpoint.tablet}>
-                            <LI marginRight="lg">
+                            <LI marginRight={breakpoint.mobile && 'lg'}>
                                 <NavClickLink capitalize href="#">
                                     facebook
                                 </NavClickLink>
                             </LI>
-                            <LI marginLeft="lg">
+                            <LI marginLeft={breakpoint.mobile && 'lg'}>
                                 <NavClickLink capitalize href="#">
                                     instagram
                                 </NavClickLink>
