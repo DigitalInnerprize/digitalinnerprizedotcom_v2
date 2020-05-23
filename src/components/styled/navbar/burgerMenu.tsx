@@ -6,7 +6,7 @@ type Props = {
     navbarState: boolean;
 };
 
-const BurgerMenu: React.FC<Props> = ({ handleNavbar, navbarState }) => {
+const BurgerMenu: React.FC<Props> = ({ handleNavbar, navbarState }: Props) => {
     return (
         <Wrapper onClick={handleNavbar}>
             <div className={navbarState ? 'open' : ''}>
