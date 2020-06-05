@@ -52,7 +52,7 @@ const ContactForm = () => {
             {errors.company && <p className="error-text">{errors.company.message}</p>}
             {errors.email && <p className="error-text">{errors.email.message}</p>}
             {errors.phone && <p className="error-text">{errors.phone.message}</p>}
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} data-netlify="true">
                 <Flex column marginAuto>
                     <Input name="name" placeholder="Name" ref={register} />
                     <Input name="company" placeholder="Company Name" ref={register} />
